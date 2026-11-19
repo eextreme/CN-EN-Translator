@@ -1,0 +1,562 @@
+[
+  {
+    "zh": "何康时",
+    "en": "He Kangshi",
+    "category": "character",
+    "aliases": [],
+    "gender": "male",
+    "notes": "Kui Xin's subordinate, calls her 'Boss' (老大)",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "c053a92e5ce8"
+  },
+  {
+    "zh": "唐冠",
+    "en": "Tang Guan",
+    "category": "character",
+    "aliases": [],
+    "gender": "male",
+    "notes": "Player, monster hybrid held by Mechanical Dawn; codename White Dove",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "5ac9388672bf"
+  },
+  {
+    "zh": "奥格斯",
+    "en": "Augus",
+    "category": "character",
+    "aliases": [],
+    "gender": "male",
+    "notes": "Antagonist player in a bet with Black Snake",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "ad4cfbd01b65"
+  },
+  {
+    "zh": "方治",
+    "en": "Fang Zhi",
+    "category": "character",
+    "aliases": [],
+    "gender": "male",
+    "notes": "Blood-Variant, deceased",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "2eb697e4adcd"
+  },
+  {
+    "zh": "李莞然",
+    "en": "Li Wanran",
+    "category": "character",
+    "aliases": [
+      "李教授"
+    ],
+    "gender": "female",
+    "notes": "Professor Li; player guarding the tobacco factory. 李教授 rendered 'Professor Li'. Translation once mistakenly substitutes 'Kui Xin' for 那位李教授.",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "9ca811943985"
+  },
+  {
+    "zh": "苏蓉",
+    "en": "Su Rong",
+    "category": "character",
+    "aliases": [
+      "蓉蓉"
+    ],
+    "gender": "female",
+    "notes": "Kui Xin's tutoring student, shadow ability; 蓉蓉 → 'Rong Rong'; calls Kui Xin 辛辛姐 'Sister Xin Xin'",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "dd1db89423c5"
+  },
+  {
+    "zh": "谢甘青",
+    "en": "Xie Ganqing",
+    "category": "character",
+    "aliases": [],
+    "gender": "unknown",
+    "notes": "Paid Kui Xin 100,000 yuan compensation",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "9f8746025085"
+  },
+  {
+    "zh": "隗辛",
+    "en": "Kui Xin",
+    "category": "character",
+    "aliases": [
+      "小辛"
+    ],
+    "gender": "female",
+    "notes": "Protagonist; known as Black Snake / Fer-de-lance. 小辛 → 'Little Xin'.",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "0d6b6d8b444e"
+  },
+  {
+    "zh": "世界融合",
+    "en": "world fusion",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "Also 'the world's fusion'",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "e40adc784322"
+  },
+  {
+    "zh": "怪物嵌合体",
+    "en": "monster hybrid",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "833b5a4b09a4"
+  },
+  {
+    "zh": "红宝石和蓝宝石",
+    "en": "the ruby and the sapphire",
+    "category": "concept",
+    "aliases": [
+      "红蓝宝石",
+      "红宝石蓝宝石"
+    ],
+    "gender": "",
+    "notes": "Mysterious choice question given to special players",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "f1c0dae7859a"
+  },
+  {
+    "zh": "锚点",
+    "en": "anchor point",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "Lowercase usually; 'Anchor' capitalized once",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "d90ed4272d0e"
+  },
+  {
+    "zh": "锚点停泊论",
+    "en": "Anchor Theory",
+    "category": "concept",
+    "aliases": [
+      "锚点论"
+    ],
+    "gender": "",
+    "notes": "Theory that special players are anchors of world fusion",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "6fc77e10d45d"
+  },
+  {
+    "zh": "人面鬼",
+    "en": "Human-Faced Ghost",
+    "category": "creature",
+    "aliases": [],
+    "gender": "",
+    "notes": "Monster symbiotic with Tang Guan",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "e85ec0af522d"
+  },
+  {
+    "zh": "异种生物",
+    "en": "variant species",
+    "category": "creature",
+    "aliases": [
+      "变异生物"
+    ],
+    "gender": "",
+    "notes": "Also 'anomalous creature' when referring to the one in Tang Guan",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "e4e8c95670b7"
+  },
+  {
+    "zh": "克拉肯号",
+    "en": "Kraken",
+    "category": "item",
+    "aliases": [],
+    "gender": "",
+    "notes": "Ship; 'the Kraken'",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "17308347ccfb"
+  },
+  {
+    "zh": "无光",
+    "en": "Sea Without Light",
+    "category": "organization",
+    "aliases": [
+      "无光组织"
+    ],
+    "gender": "",
+    "notes": "Player organization led by Kui Xin",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "f0df42914c11"
+  },
+  {
+    "zh": "机械黎明",
+    "en": "Mechanical Dawn",
+    "category": "organization",
+    "aliases": [],
+    "gender": "",
+    "notes": "Organization experimenting on Tang Guan",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "b292ed6e0b18"
+  },
+  {
+    "zh": "联邦",
+    "en": "Federation",
+    "category": "organization",
+    "aliases": [],
+    "gender": "",
+    "notes": "Second World government",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "e71bc553d563"
+  },
+  {
+    "zh": "桐林市",
+    "en": "Tongling City",
+    "category": "place",
+    "aliases": [],
+    "gender": "",
+    "notes": "Kui Xin's First World city",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "9a96922323da"
+  },
+  {
+    "zh": "浮岗市",
+    "en": "Floating Port City",
+    "category": "place",
+    "aliases": [],
+    "gender": "",
+    "notes": "Where Tang Guan is held",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "6d9c2de7551a"
+  },
+  {
+    "zh": "白鲸市",
+    "en": "White Whale City",
+    "category": "place",
+    "aliases": [],
+    "gender": "",
+    "notes": "Second World city; site of the blackout.",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "66f58522d787"
+  },
+  {
+    "zh": "第一世界",
+    "en": "First World",
+    "category": "place",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "50f8e5cbb4c7"
+  },
+  {
+    "zh": "第二世界",
+    "en": "Second World",
+    "category": "place",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "9500bfdc325d"
+  },
+  {
+    "zh": "共生超凡能力",
+    "en": "symbiotic supernatural ability",
+    "category": "technique",
+    "aliases": [],
+    "gender": "",
+    "notes": "Tang Guan's ability",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "62a5bd93e2da"
+  },
+  {
+    "zh": "剥夺者777号",
+    "en": "Depriver 777",
+    "category": "title",
+    "aliases": [
+      "Augus"
+    ],
+    "gender": "unknown",
+    "notes": "Player killer on forum notices",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "e1b0889a978e"
+  },
+  {
+    "zh": "异血者",
+    "en": "Blood-Variant",
+    "category": "title",
+    "aliases": [],
+    "gender": "",
+    "notes": "Epithet of Fang Zhi",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "028dd00284f1"
+  },
+  {
+    "zh": "白鸽",
+    "en": "White Dove",
+    "category": "title",
+    "aliases": [],
+    "gender": "",
+    "notes": "Tang Guan's codename",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "dcfbb5068471"
+  },
+  {
+    "zh": "矛头蝮",
+    "en": "Fer-de-lance",
+    "category": "title",
+    "aliases": [],
+    "gender": "",
+    "notes": "Kui Xin's codename used by Tang Guan",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "f42b1a38286b"
+  },
+  {
+    "zh": "黑蛇",
+    "en": "Black Snake",
+    "category": "title",
+    "aliases": [],
+    "gender": "",
+    "notes": "Kui Xin's alias",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "47b763ae199a"
+  },
+  {
+    "zh": "暗界降临",
+    "en": "Dark Realm Descent",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "6ad63411aa35"
+  },
+  {
+    "zh": "波波夫家族",
+    "en": "Popov family",
+    "category": "organization",
+    "aliases": [],
+    "gender": "",
+    "notes": "Plutocrat family ranked in the top twenty of the Federation.",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "97542acc1708"
+  },
+  {
+    "zh": "季米特里·波波夫",
+    "en": "Dmitri Popov",
+    "category": "character",
+    "aliases": [],
+    "gender": "male",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "5a90151c4caf"
+  },
+  {
+    "zh": "阿布拉·波波夫",
+    "en": "Abra Popov",
+    "category": "character",
+    "aliases": [
+      "阿布拉"
+    ],
+    "gender": "male",
+    "notes": "Highly respected member of the Popov family; kidnapped. 阿布拉 alone is rendered 'Abra'.",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "69872343d786"
+  },
+  {
+    "zh": "昵称233",
+    "en": "username 233",
+    "category": "other",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "a3532ea51c0a"
+  },
+  {
+    "zh": "剥夺者233号",
+    "en": "Deprivator No. 233",
+    "category": "title",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "4067b1251813"
+  },
+  {
+    "zh": "觉醒者",
+    "en": "Awakened",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "Here 'Awakened individuals'.",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "510de49c1481"
+  },
+  {
+    "zh": "财阀",
+    "en": "plutocrats / plutocrat families",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "91884db244df"
+  },
+  {
+    "zh": "116L",
+    "en": "116L:",
+    "category": "other",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "aa1c3394a512"
+  },
+  {
+    "zh": "个人板块",
+    "en": "personal forum",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "4a60c709718e"
+  },
+  {
+    "zh": "《深红之土》",
+    "en": "Crimson Earth",
+    "category": "other",
+    "aliases": [],
+    "gender": "",
+    "notes": "Written in double quotes in this chapter: “Crimson Earth”.",
+    "confirmed": true,
+    "first_seen": "0001",
+    "id": "46d82162b606"
+  },
+  {
+    "zh": "小白鼠三号",
+    "en": "Mouse number three",
+    "category": "other",
+    "aliases": [],
+    "gender": "",
+    "notes": "Kui Xin's experimental white mouse that mutated",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "7ed8626ff170"
+  },
+  {
+    "zh": "烟草厂",
+    "en": "tobacco factory",
+    "category": "place",
+    "aliases": [],
+    "gender": "",
+    "notes": "Site guarded by Li Wanran where an anchor fixed; lowercase, 'the tobacco factory'",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "7b6a5f9e2179"
+  },
+  {
+    "zh": "老大",
+    "en": "Boss",
+    "category": "title",
+    "aliases": [],
+    "gender": "",
+    "notes": "He Kangshi's form of address for Kui Xin",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "4fad0f3cf2f8"
+  },
+  {
+    "zh": "辛辛姐",
+    "en": "Sister Xin Xin",
+    "category": "title",
+    "aliases": [],
+    "gender": "female",
+    "notes": "Su Rong's form of address for Kui Xin",
+    "confirmed": false,
+    "first_seen": "0001",
+    "id": "e6fadb807e96"
+  },
+  {
+    "zh": "超级人工智能",
+    "en": "super A.I.",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "The Federation's surveillance AI.",
+    "confirmed": false,
+    "first_seen": "0002",
+    "id": "b7960bdf8159"
+  },
+  {
+    "zh": "阵亡玩家名单",
+    "en": "list of fallen players",
+    "category": "concept",
+    "aliases": [
+      "死亡玩家名单"
+    ],
+    "gender": "",
+    "notes": "Also 'fallen player list'. 死亡玩家名单 is rendered 'list of deceased players'.",
+    "confirmed": false,
+    "first_seen": "0002",
+    "id": "adcae822a012"
+  },
+  {
+    "zh": "通讯器",
+    "en": "communicator",
+    "category": "item",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": false,
+    "first_seen": "0002",
+    "id": "a3ca5607bed4"
+  },
+  {
+    "zh": "首楼",
+    "en": "First Post",
+    "category": "other",
+    "aliases": [],
+    "gender": "",
+    "notes": "Forum opening post. Also rendered as 'First Floor'.",
+    "confirmed": false,
+    "first_seen": "0002",
+    "id": "c806942247dc"
+  }
+]

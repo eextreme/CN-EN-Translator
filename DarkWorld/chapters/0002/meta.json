@@ -1,0 +1,77 @@
+{
+  "title": "0003",
+  "source": "",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "暗界降临",
+      "suggested_en": "Dark Realm Descent",
+      "category": "concept",
+      "reason": "Glossary term not found anywhere in the translation",
+      "paragraph": null,
+      "entry_id": "6ad63411aa35",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "财阀",
+      "suggested_en": "plutocrats / plutocrat families",
+      "category": "concept",
+      "reason": "Glossary term not found anywhere in the translation",
+      "paragraph": null,
+      "entry_id": "91884db244df",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "昵称233",
+      "suggested_en": "username 233",
+      "category": "other",
+      "reason": "Glossary term not found anywhere in the translation",
+      "paragraph": null,
+      "entry_id": "a3532ea51c0a",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "季米特里·波波夫",
+      "suggested_en": "Dmitri Popov",
+      "category": "character",
+      "reason": "Glossary term not found anywhere in the translation",
+      "paragraph": null,
+      "entry_id": "5a90151c4caf",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "116L",
+      "suggested_en": "116L:",
+      "category": "other",
+      "reason": "Glossary term not found anywhere in the translation",
+      "paragraph": null,
+      "entry_id": "aa1c3394a512",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "个人板块",
+      "suggested_en": "personal forum",
+      "category": "concept",
+      "reason": "Glossary term not found anywhere in the translation",
+      "paragraph": null,
+      "entry_id": "4a60c709718e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "剥夺者233号",
+      "suggested_en": "Deprivator No. 233",
+      "category": "title",
+      "reason": "Glossary term not found anywhere in the translation",
+      "paragraph": null,
+      "entry_id": "4067b1251813",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-115318-402"
+}
