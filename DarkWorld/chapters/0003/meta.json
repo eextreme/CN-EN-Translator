@@ -1,6 +1,27 @@
 {
-  "title": "",
+  "title": "0004",
   "source": "",
-  "warnings": [],
-  "updated": "20261119-115318-379"
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "暗界降临",
+      "suggested_en": "Dark Realm Descent",
+      "category": "concept",
+      "reason": "Glossary term not found anywhere in the translation",
+      "paragraph": null,
+      "entry_id": "6ad63411aa35",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "阿布拉·波波夫",
+      "suggested_en": "Abra Popov",
+      "category": "character",
+      "reason": "Glossary term not found anywhere in the translation",
+      "paragraph": null,
+      "entry_id": "69872343d786",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-153633-647"
 }

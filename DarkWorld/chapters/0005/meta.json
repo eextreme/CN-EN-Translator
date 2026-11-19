@@ -1,0 +1,117 @@
+{
+  "title": "0006",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "uncertain",
+      "zh": "通许",
+      "suggested_en": "The call",
+      "category": "other",
+      "reason": "Likely a typo in the source for 通讯 (call). I translated it as 'call'.",
+      "paragraph": 44,
+      "entry_id": "",
+      "alternative_en": "The call"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "广告飞空艇",
+      "suggested_en": "advertising airship",
+      "category": "item",
+      "reason": "A recurring Second World vehicle. 飞空艇 is rendered as \"airship\" so it stays consistent.",
+      "paragraph": 78,
+      "entry_id": "",
+      "alternative_en": "advertising blimp"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "董事长",
+      "suggested_en": "Chairwoman",
+      "category": "title",
+      "reason": "The secretary uses this title for Polina (female), who is head of the Popov family.",
+      "paragraph": 76,
+      "entry_id": "",
+      "alternative_en": "Chairman"
+    },
+    {
+      "kind": "missing",
+      "zh": "财阀",
+      "suggested_en": "plutocrats / plutocrat families",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 39",
+      "paragraph": 38,
+      "entry_id": "91884db244df",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "阿布拉·波波夫",
+      "suggested_en": "Abra Popov",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 48",
+      "paragraph": 47,
+      "entry_id": "69872343d786",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "阿布拉·波波夫",
+      "suggested_en": "Abra Popov",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 53",
+      "paragraph": 52,
+      "entry_id": "69872343d786",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "波丽娜",
+      "suggested_en": "Polina",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 62",
+      "paragraph": 61,
+      "entry_id": "6c684e5ae2a1",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "阿布拉·波波夫",
+      "suggested_en": "Abra Popov",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 72",
+      "paragraph": 71,
+      "entry_id": "69872343d786",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "阿布拉·波波夫",
+      "suggested_en": "Abra Popov",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 81",
+      "paragraph": 80,
+      "entry_id": "69872343d786",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "财阀",
+      "suggested_en": "plutocrats / plutocrat families",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 83",
+      "paragraph": 82,
+      "entry_id": "91884db244df",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "阿布拉·波波夫",
+      "suggested_en": "Abra Popov",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 89",
+      "paragraph": 88,
+      "entry_id": "69872343d786",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-160354-142"
+}

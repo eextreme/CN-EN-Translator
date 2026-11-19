@@ -1,20 +1,27 @@
 Key characters
-- Kui Xin — protagonist, female, player. Her forum handle is "Black Snake" (players and the text call Black Snake "he"; she is secretly female). She also founded and leads the Sea Without Light organization in the Second World (White Whale City). She lives in Tongling City and is about to start university, but the Dark Realm Descent is about to hit at the same time.
-- Augus (Depriver 777) — male, a player-killer. He killed two players this week. Nobody knows if he works for the Federation or alone. Kui Xin wants him dead, but she isn't sure killing him in the Second World would remove his "anchor" in the First World.
-- Li Wanran — a capable player. Kui Xin considered leaving her responsibilities to Li Wanran (gender not stated yet).
-- Deprivator No. 233 — another player identity linked to Tongling City. Players argued last week over whether 233 and Black Snake are the same person. Some think 233 is a Sea Without Light member. 233 hasn't posted since everyone came back.
-- Dmitri Popov — male, son of the Popov family head. Kidnapped by the Sea Without Light.
-- Abra Popov — male, a highly valued Popov family member. Kidnapped. A "fake Abra" appeared at a Popov press conference, while the Sea Without Light released a video of the "real" Abra.
+- Kui Xin — protagonist, female, player. Codenames: "Black Snake" on the forum (players call Black Snake "he"; she's secretly female) and "Fer-de-lance" in the Second World. To Polina she presents Fer-de-lance as the Sea Without Light's external-affairs handler, not its leader. She founded and leads the Sea Without Light in White Whale City and lives in Tongling City, on leave from university. She can open spatial vortexes. She is injured, and her body may be inside a Dark Realm.
+- Augus (Depriver 777) — male, player-killer with telekinesis. His body is probably in the nuclear-plant Dark Realm in Floating Port City. Kui Xin wants to find him because his escape would prove Dark Realms can be exited.
+- Su Rong (Ash) — female, Kui Xin's teammate. Her shadow ability can't speak. She is a student who is considering dropping out. She is on standby at the base.
+- He Kangshi — male, calls Kui Xin "sis." Oversees the bar renovation, which gang thugs are doing. Newly C-rank (Telekinetic Control) but weak in combat. Teaching Four Leaves manners.
+- Four Leaves — male, childlike being formerly of Mechanical Dawn. Very attached to Kui Xin.
+- Amber — formerly Resistance, now on Kui Xin's side. Held Abra captive.
+- Abra Popov — male, Polina's younger brother. Kidnapped and injured. Now publicly "returned."
+- Polina — female, Popov chairwoman and Abra's elder sister. Sharp, cold and proud. Her one weakness is the family's reputation. Dmitri was her son.
+- Dmitri Popov — male, Polina's son. Kui Xin says he is dead.
+- Adam — Kui Xin's ally and network/data expert. He secures her calls through an earpiece.
+- Li Wanran — ally inside the Special Intelligence Division.
+- White Dove (male) and Dusk (female) — players who waited outside the Dark Realm with Su Rong.
+- Deprivator No. 233 — Tongling City player identity some think is Black Snake.
+- Recruit shortlist: Lancet, Golden Ring, Wei Li, Samanto.
 
 Setting/terms
-- First World: the players' home world. Tongling City is going through a critical transformation.
-- Second World: an advanced society run by the Federation and plutocrat families. A super AI monitors players there, and the Federation kills them. Players are cut off from each other there and may be brainwashed into traitors.
-- Player forum: has a fallen players list (death list) and personal boards. To join the Black Snake personal board, a player must reveal their First World identity and area of activity.
-- "Awakened": a type of player who gets priority in recruitment.
-- Kui Xin had been changed by her experience of "Crimson Soil."
+- First World: home world. Tongling City is transforming, and the Dark Realm Descent is coming.
+- Second World: run by the Federation and plutocrat families. A super AI monitors players.
+- Dark Realms: dangerous zones, possibly one-way.
+- Threats: Mechanical Dawn (Eve, weakened), the Resistance (the Federation's political red line; any link to it is fatal), and the Special Intelligence Division (its S-rank Awakened are the danger).
+- Player forum: has a death list and personal boards. Joining the Black Snake board requires revealing your First World identity.
 
 Recent events
-- Ch1: Over one week, the Sea Without Light kidnapped two Popov family members and demanded 20 billion in ransom. It's also blamed for the White Whale City blackout, which caused billions in losses (officially a power-plant accident). The news was meant to signal to scattered players and recruit them. The Sea Without Light is also recruiting on the dark web.
-- On the forum, players argued whether the two Black Snakes are the same person. An "insider" who went to the recruitment interview said the interviewer neither confirmed nor denied that the group is player-run. Most players cheer the group. Some fear the Federation will retaliate against ordinary players. Many are sending Kui Xin their real identities so they can join her personal board.
-- Kui Xin weighed school against the game and decided she can't abandon Tongling City.
-- She posted as Black Snake. The post announced that the Sea Without Light is openly recruiting, asked players who were already interviewed to contact her for identity checks, said Awakened get priority, and said the personal board is still recruiting under the same requirements. This confirmed to everyone that the Sea Without Light is a players' organization, and the forum went into an uproar.
+- Ch1–3: The Sea Without Light kidnapped Abra and Dmitri and demanded 20 billion. As Black Snake, Kui Xin confirmed the group is player-run and is recruiting, with Awakened getting priority.
+- Ch4: Kui Xin set her priorities (ransom, recruits, Augus). Su Rong will throw medicine and food into the Dark Realm at the next return. Kui Xin called Polina with a voice changer.
+- Ch5: Polina stalled while a Special Intelligence Division technician tried to trace the call, but Adam's encryption and line-switching beat him. As Fer-de-lance, Kui Xin offered a truce for 20 billion and gave an account number. Once the technician left, Polina secretly paid. Kui Xin then messaged that Dmitri is dead but Abra would be returned. Polina asked the Special Intelligence Division and the Investigation Department for armed support, hoping to ambush a handover. Half an hour later, an advertising airship flew past her skyscraper with Abra dangling from a rope beneath it. Its sign and flyers declared that Abra is a traitor to the plutocrats and a member of the Resistance. This puts the Popov family in grave danger.

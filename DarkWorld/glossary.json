@@ -352,7 +352,7 @@
     "category": "concept",
     "aliases": [],
     "gender": "",
-    "notes": "",
+    "notes": "Rendered descriptively here as 'The descent of the Dark Realm'",
     "confirmed": true,
     "first_seen": "0001",
     "id": "6ad63411aa35"
@@ -558,5 +558,383 @@
     "confirmed": false,
     "first_seen": "0002",
     "id": "c806942247dc"
+  },
+  {
+    "zh": "亚当",
+    "en": "Adam",
+    "category": "character",
+    "aliases": [],
+    "gender": "unknown",
+    "notes": "Federation AI who helps Kui Xin; referred to as 'it' and 'he'; works with Eve",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "5d89a796490c"
+  },
+  {
+    "zh": "四叶",
+    "en": "Four Leaves",
+    "category": "character",
+    "aliases": [],
+    "gender": "male",
+    "notes": "Childlike boy cared for by He Kangshi; connected to Amber",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "b39c42ea8023"
+  },
+  {
+    "zh": "夏娃",
+    "en": "Eve",
+    "category": "character",
+    "aliases": [],
+    "gender": "unknown",
+    "notes": "Federation AI, Adam's counterpart",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "90e4cdb51a0b"
+  },
+  {
+    "zh": "波丽娜",
+    "en": "Polina",
+    "category": "character",
+    "aliases": [],
+    "gender": "female",
+    "notes": "Head of the Popov family",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "6c684e5ae2a1"
+  },
+  {
+    "zh": "灰烬",
+    "en": "Ash",
+    "category": "character",
+    "aliases": [],
+    "gender": "female",
+    "notes": "Codename (apparently Su Rong's) mentioned by He Kangshi",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "e563cde9cff5"
+  },
+  {
+    "zh": "琥珀",
+    "en": "Amber",
+    "category": "character",
+    "aliases": [],
+    "gender": "male",
+    "notes": "Guards the hostage Abra; cares about Four Leaves",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "4c8b128a9667"
+  },
+  {
+    "zh": "门涅托",
+    "en": "Menneto",
+    "category": "character",
+    "aliases": [],
+    "gender": "unknown",
+    "notes": "God-like entity inside the Dark Realm",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "9ed9d8975702"
+  },
+  {
+    "zh": "暗界",
+    "en": "Dark Realm",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "Nullifies supernatural powers and electronics",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "92bd8342caf1"
+  },
+  {
+    "zh": "游戏面板",
+    "en": "game panel",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "a7f493f2cead"
+  },
+  {
+    "zh": "红宝石",
+    "en": "ruby",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "A choice offered in the Dark Realm; lowercase",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "eedd6e9f0e68"
+  },
+  {
+    "zh": "超凡能力",
+    "en": "supernatural abilities",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "Also 'supernatural powers'; lowercase",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "23ff4d47988d"
+  },
+  {
+    "zh": "【一个回答】",
+    "en": "[One Answer]",
+    "category": "item",
+    "aliases": [
+      "一个回答"
+    ],
+    "gender": "",
+    "notes": "Mission reward: one yes/no question",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "c7cd337db1a0"
+  },
+  {
+    "zh": "秘密教团",
+    "en": "Secret Cult",
+    "category": "organization",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "54f12d0e2252"
+  },
+  {
+    "zh": "缉查部",
+    "en": "Investigation Department",
+    "category": "organization",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "cb11d5e1c9c4"
+  },
+  {
+    "zh": "联邦工程部",
+    "en": "Department of Engineering",
+    "category": "organization",
+    "aliases": [
+      "工程部"
+    ],
+    "gender": "",
+    "notes": "Rendered 'the Federation's Department of Engineering'",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "10e63e353858"
+  },
+  {
+    "zh": "浮岗市核电站",
+    "en": "Floating Port City Nuclear Power Plant",
+    "category": "place",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "a6578c29d93d"
+  },
+  {
+    "zh": "物质重组",
+    "en": "Matter Reorganization",
+    "category": "technique",
+    "aliases": [],
+    "gender": "",
+    "notes": "Augus's S-class ability",
+    "confirmed": false,
+    "first_seen": "0003",
+    "id": "6cf573d98e92"
+  },
+  {
+    "zh": "金环",
+    "en": "Golden Ring",
+    "category": "title",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "09c3a100b830"
+  },
+  {
+    "zh": "卫鲤",
+    "en": "Wei Li",
+    "category": "character",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "89824fd76143"
+  },
+  {
+    "zh": "反抗军",
+    "en": "the Resistance",
+    "category": "organization",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "db0d38b1c137"
+  },
+  {
+    "zh": "特情处",
+    "en": "Special Intelligence Division",
+    "category": "organization",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "bb2bb5324c39"
+  },
+  {
+    "zh": "归零之战",
+    "en": "Battle with Zero",
+    "category": "other",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "bbfa4dc21f9d"
+  },
+  {
+    "zh": "Ghost",
+    "en": "Ghost",
+    "category": "character",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "7acaef3b7b44"
+  },
+  {
+    "zh": "奥斯格",
+    "en": "Augus",
+    "category": "character",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "9aab9ab0c022"
+  },
+  {
+    "zh": "弟弟",
+    "en": "younger brother",
+    "category": "other",
+    "aliases": [],
+    "gender": "male",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "04f6d9e91413"
+  },
+  {
+    "zh": "矛头蝮姐",
+    "en": "Big Sis Fer-de-lance",
+    "category": "title",
+    "aliases": [],
+    "gender": "female",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "e22d720b2e76"
+  },
+  {
+    "zh": "念力掌控",
+    "en": "Telekinetic Control",
+    "category": "technique",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "28a36df372f5"
+  },
+  {
+    "zh": "萨曼托",
+    "en": "Samanto",
+    "category": "character",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "bae706ef3deb"
+  },
+  {
+    "zh": "柳叶刀",
+    "en": "Lancet",
+    "category": "title",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "8010c042f945"
+  },
+  {
+    "zh": "创拓科技公司",
+    "en": "Trailblaze Technologies",
+    "category": "organization",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "9b199c3fc004"
+  },
+  {
+    "zh": "黄昏",
+    "en": "Dusk",
+    "category": "title",
+    "aliases": [],
+    "gender": "female",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "b85ca2e202cb"
+  },
+  {
+    "zh": "五个字",
+    "en": "four words",
+    "category": "other",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0004",
+    "id": "e5cf947fc812"
+  },
+  {
+    "zh": "季米特里",
+    "en": "Dmitri",
+    "category": "character",
+    "aliases": [],
+    "gender": "male",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0005",
+    "id": "1d8f85053cec"
+  },
+  {
+    "zh": "主脑",
+    "en": "central system",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0005",
+    "id": "d096ba15a592"
   }
 ]
