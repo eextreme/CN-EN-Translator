@@ -190,7 +190,8 @@ class SyncReviewDialog(QDialog):
 
 
 class SettingsDialog(QDialog):
-    def __init__(self, parent: QWidget, settings: Settings, test_fn: Callable[[Settings], None]):
+    def __init__(self, parent: QWidget, settings: Settings, test_fn: Callable[[Settings], None],
+                 voices: dict[str, list[str]] | None = None):
         super().__init__(parent)
         self.setWindowTitle("Settings")
         self.settings = settings
@@ -251,6 +252,26 @@ class SettingsDialog(QDialog):
         self.font_size.setValue(settings.font_size)
         form.addRow("Editor font size", self.font_size)
 
+        voices = voices or {}
+        self.voice_zh = QComboBox()
+        self.voice_en = QComboBox()
+        for combo, lang, current in ((self.voice_zh, "zh", settings.tts_voice_zh), (self.voice_en, "en", settings.tts_voice_en)):
+            combo.addItem("Automatic", "")
+            for name in voices.get(lang, []):
+                combo.addItem(name, name)
+            i = combo.findData(current)
+            combo.setCurrentIndex(max(i, 0))
+        if not voices.get("zh"):
+            self.voice_zh.setToolTip("No Chinese voice installed. Add one in Windows Settings → Time & language → "
+                                     "Language & region (Chinese → Text-to-speech).")
+        form.addRow("Read-aloud voice (Chinese)", self.voice_zh)
+        form.addRow("Read-aloud voice (English)", self.voice_en)
+        self.tts_rate = QSpinBox()
+        self.tts_rate.setRange(-10, 10)
+        self.tts_rate.setValue(settings.tts_rate)
+        self.tts_rate.setToolTip("-10 = slowest, 0 = normal, 10 = fastest")
+        form.addRow("Read-aloud speed", self.tts_rate)
+
         self.patterns = QPlainTextEdit("\n".join(settings.cleanup_patterns))
         self.patterns.setToolTip("One regular expression per line. Matches are removed by Clean Raw.")
         self.patterns.setMaximumHeight(150)
@@ -287,6 +308,9 @@ class SettingsDialog(QDialog):
         s.timeout_seconds = self.timeout.value()
         s.update_summary = self.update_summary.isChecked()
         s.font_size = self.font_size.value()
+        s.tts_voice_zh = self.voice_zh.currentData() or ""
+        s.tts_voice_en = self.voice_en.currentData() or ""
+        s.tts_rate = self.tts_rate.value()
         s.cleanup_patterns = [p for p in self.patterns.toPlainText().splitlines() if p.strip()]
         return s
 

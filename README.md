@@ -44,6 +44,11 @@ against your Claude plan, and the status bar shows your 5-hour and 7-day plan us
 - **Confirmed terms:** a ticked ✓ term is never overwritten by Sync. Editing a term confirms it.
 - **Paragraph linking:** when both frames have the same number of paragraphs, clicking a paragraph highlights its
   partner in the other frame.
+- **Read aloud (Ctrl+R):** right-click selected text (or any paragraph) and choose **Read aloud**, or use
+  **Chapter → Read aloud** / the toolbar button. Chinese text uses a Chinese voice and English text an English voice;
+  the word being spoken is highlighted in green. Press Ctrl+R again to stop. Pick voices and speed in Settings.
+  Chinese needs a Chinese Windows voice: Settings → Time & language → Language & region → add Chinese (Simplified)
+  with Text-to-speech.
 - **Raw text:** **Clean raw** removes site watermarks and ads (the patterns are editable in Settings).
   **Traditional → Simplified** converts the Chinese text.
 - **Files:** load chapter text from `.txt` files (UTF-8, GB18030 and Big5 are detected), or export all translations

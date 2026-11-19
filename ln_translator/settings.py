@@ -28,6 +28,9 @@ class Settings:
     cleanup_patterns: list[str] = field(default_factory=lambda: list(DEFAULT_CLEANUP_PATTERNS))
     recent_projects: list[str] = field(default_factory=list)
     font_size: int = 11
+    tts_voice_zh: str = ""  # empty = first Chinese voice
+    tts_voice_en: str = ""  # empty = first English voice
+    tts_rate: int = 0  # -10 (slow) .. 10 (fast)
 
     @classmethod
     def load(cls) -> "Settings":

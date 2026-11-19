@@ -26,6 +26,8 @@ def _fmt(underline: QColor | None = None, background: QColor | None = None, colo
     return f
 
 
+PARAGRAPH_SEPARATOR = chr(0x2029)  # what QTextCursor.selectedText() puts between paragraphs
+
 CONFIRMED = _fmt(underline=QColor("#2f80ed"))
 SUGGESTED = _fmt(underline=QColor("#2f80ed"), style=QTextCharFormat.DotLine)
 WARNED = _fmt(background=QColor(255, 165, 0, 90))
@@ -104,6 +106,8 @@ class TextFrame(QPlainTextEdit):
     addTermRequested = Signal(str, str)  # selected text, side ("zh" | "en")
     retranslateRequested = Signal(int)  # paragraph index
     findInGlossaryRequested = Signal(str)
+    readAloudRequested = Signal()
+    stopReadingRequested = Signal()
 
     def __init__(self, side: str, placeholder: str):
         super().__init__()
@@ -113,6 +117,8 @@ class TextFrame(QPlainTextEdit):
         self.highlighter = TermHighlighter(self.document(), side)
         self._linked_paragraph: int | None = None
         self._suppress = False
+        self._speech_range: tuple[int, int] | None = None  # (doc position, length) of the word being read aloud
+        self.is_speaking = lambda: False  # set by the main window
         self.cursorPositionChanged.connect(self._on_cursor)
 
     # ----- helpers ----------------------------------------------------------
@@ -158,6 +164,29 @@ class TextFrame(QPlainTextEdit):
     def current_paragraph(self) -> int | None:
         return self.paragraph_of_block(self.textCursor().block())
 
+    def text_to_read(self) -> tuple[int, str]:
+        """The selection, or the paragraph under the cursor if nothing is selected, with its document position."""
+        cur = self.textCursor()
+        if not cur.hasSelection():
+            block = cur.block()
+            return block.position(), block.text()
+        start = cur.selectionStart()
+        # selectedText() uses U+2029 between paragraphs; keep lengths equal so word offsets map back to the document
+        return start, cur.selectedText().replace(PARAGRAPH_SEPARATOR, "\n")
+    def set_speech_range(self, start: int | None, length: int = 0) -> None:
+        self._speech_range = None if start is None else (start, length)
+        if start is not None:  # scroll the spoken word into view without moving the user's cursor/selection
+            cur = QTextCursor(self.document())
+            cur.setPosition(min(start, self.document().characterCount() - 1))
+            if not self.viewport().rect().contains(self.cursorRect(cur)):
+                self._suppress = True
+                saved = self.textCursor()
+                self.setTextCursor(cur)
+                self.centerCursor()
+                self.setTextCursor(saved)
+                self._suppress = False
+        self._update_selections()
+
     # ----- paragraph linking -----------------------------------------------
     def _on_cursor(self) -> None:
         self._update_selections()
@@ -189,6 +218,16 @@ class TextFrame(QPlainTextEdit):
                 sel.format.setProperty(QTextFormat.FullWidthSelection, True)
                 sel.cursor = QTextCursor(block)
                 sels.append(sel)
+        if self._speech_range is not None:
+            start, length = self._speech_range
+            sel = QTextEdit.ExtraSelection()
+            sel.format.setBackground(QColor(39, 174, 96, 110))
+            cur = QTextCursor(self.document())
+            end = self.document().characterCount() - 1
+            cur.setPosition(min(start, end))
+            cur.setPosition(min(start + length, end), QTextCursor.KeepAnchor)
+            sel.cursor = cur
+            sels.append(sel)
         self.setExtraSelections(sels)
 
     def focusInEvent(self, e):  # noqa: N802
@@ -231,12 +270,19 @@ class TextFrame(QPlainTextEdit):
 
     # ----- context menu -----------------------------------------------------
     def contextMenuEvent(self, e):  # noqa: N802
+        if not self.textCursor().hasSelection():  # right-click places the cursor, so "read paragraph" uses the clicked one
+            self.setTextCursor(self.cursorForPosition(e.pos()))
         menu: QMenu = self.createStandardContextMenu()
         selected = self.textCursor().selectedText().strip()
         menu.addSeparator()
         if selected and len(selected) <= 60:
             menu.addAction(f"Add “{selected}” to glossary…", lambda: self.addTermRequested.emit(selected, self.side))
             menu.addAction(f"Find “{selected}” in glossary", lambda: self.findInGlossaryRequested.emit(selected))
+        if self.is_speaking():
+            menu.addAction("Stop reading aloud", self.stopReadingRequested.emit)
+        else:
+            what = "selection" if selected else "paragraph"
+            menu.addAction(f"Read {what} aloud", self.readAloudRequested.emit)
         para = self.paragraph_of_block(self.cursorForPosition(e.pos()).block())
         if para is not None:
             menu.addAction(f"Retranslate paragraph {para + 1}…", lambda: self.retranslateRequested.emit(para))

@@ -114,3 +114,13 @@ def chunk_indices(paragraphs: list[str], max_chars: int) -> list[list[int]]:
     if current:
         chunks.append(current)
     return chunks
+
+
+_CJK_RX = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]")  # CJK ideographs (ext. A, unified, compatibility)
+
+
+def detect_language(text: str) -> str:
+    """'zh' if the text is mostly Chinese characters (ignoring spaces/punctuation), else 'en'."""
+    cjk = len(_CJK_RX.findall(text))
+    latin = sum(1 for c in text if c.isascii() and c.isalpha())
+    return "zh" if cjk and cjk >= latin / 4 else "en"

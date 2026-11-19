@@ -1,0 +1,107 @@
+{
+  "title": "",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "uncertain",
+      "zh": "黑曜",
+      "suggested_en": "Obsidian",
+      "category": "character",
+      "reason": "New name: an artificial human codename, male (one of Amber's fellow artificial humans, currently imprisoned). I translated it by meaning to match Amber and Four Leaves, even though the character rule calls for pinyin.",
+      "paragraph": 15,
+      "entry_id": "",
+      "alternative_en": "Hei Yao"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "银面",
+      "suggested_en": "Silver Mask",
+      "category": "character",
+      "reason": "New name: an artificial human codename raised alongside Amber. Translated by meaning for consistency with the other codenames. Gender not clear.",
+      "paragraph": 15,
+      "entry_id": "",
+      "alternative_en": "Yin Mian"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "迷魂之音",
+      "suggested_en": "Soul-Bewitching Voice",
+      "category": "technique",
+      "reason": "New term: Kui Xin's sound-based mind-control ability.",
+      "paragraph": 42,
+      "entry_id": "",
+      "alternative_en": "Mihun Zhi Yin"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "影子二重身",
+      "suggested_en": "shadow double",
+      "category": "concept",
+      "reason": "Su Rong's shadow manifestation; keep consistent",
+      "paragraph": 86,
+      "entry_id": "",
+      "alternative_en": "yingzi erchongshen"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "谁是卧底",
+      "suggested_en": "Who's the Spy",
+      "category": "other",
+      "reason": "Real Chinese party game (find the hidden undercover); rendered with a familiar English game-style name",
+      "paragraph": 92,
+      "entry_id": "",
+      "alternative_en": "Who's the Undercover"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "叛徒预备役",
+      "suggested_en": "traitor-in-waiting",
+      "category": "other",
+      "reason": "Kui Xin's phrase; may recur",
+      "paragraph": 90,
+      "entry_id": "",
+      "alternative_en": "traitor reserve"
+    },
+    {
+      "kind": "missing",
+      "zh": "四叶",
+      "suggested_en": "Four Leaves",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 3",
+      "paragraph": 2,
+      "entry_id": "b39c42ea8023",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 41",
+      "paragraph": 40,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 43",
+      "paragraph": 42,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 70",
+      "paragraph": 69,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-162453-476"
+}

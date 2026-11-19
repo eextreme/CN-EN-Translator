@@ -13,6 +13,7 @@ from ln_translator.services import UNTRANSLATED_MARK, Translator
 from ln_translator.text_utils import (
     chunk_indices,
     clean_raw,
+    detect_language,
     is_aligned,
     paragraph_index_at_line,
     replace_paragraphs,
@@ -33,6 +34,14 @@ def test_paragraphs_and_alignment():
     assert is_aligned(raw, "One\n\nTwo\n\nThree")
     assert not is_aligned(raw, "One\n\nTwo")
     assert replace_paragraphs("A\n\nB\n\nC", {1: "b!"}) == "A\n\nb!\n\nC"
+
+
+def test_detect_language():
+    assert detect_language("林动走了进来。") == "zh"
+    assert detect_language("Lin Dong walked in.") == "en"
+    assert detect_language("他说：OK，我们走吧。") == "zh"
+    assert detect_language("Lin Dong (林动) walked into the hall and sat down.") == "en"
+    assert detect_language("") == "en"
 
 
 def test_clean_raw_removes_watermarks():

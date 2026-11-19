@@ -1,27 +1,27 @@
 Key characters
-- Kui Xin — protagonist, female, player. Codenames: "Black Snake" on the forum (players call Black Snake "he"; she's secretly female) and "Fer-de-lance" in the Second World. To Polina she presents Fer-de-lance as the Sea Without Light's external-affairs handler, not its leader. She founded and leads the Sea Without Light in White Whale City and lives in Tongling City, on leave from university. She can open spatial vortexes. She is injured, and her body may be inside a Dark Realm.
-- Augus (Depriver 777) — male, player-killer with telekinesis. His body is probably in the nuclear-plant Dark Realm in Floating Port City. Kui Xin wants to find him because his escape would prove Dark Realms can be exited.
-- Su Rong (Ash) — female, Kui Xin's teammate. Her shadow ability can't speak. She is a student who is considering dropping out. She is on standby at the base.
-- He Kangshi — male, calls Kui Xin "sis." Oversees the bar renovation, which gang thugs are doing. Newly C-rank (Telekinetic Control) but weak in combat. Teaching Four Leaves manners.
-- Four Leaves — male, childlike being formerly of Mechanical Dawn. Very attached to Kui Xin.
-- Amber — formerly Resistance, now on Kui Xin's side. Held Abra captive.
-- Abra Popov — male, Polina's younger brother. Kidnapped and injured. Now publicly "returned."
-- Polina — female, Popov chairwoman and Abra's elder sister. Sharp, cold and proud. Her one weakness is the family's reputation. Dmitri was her son.
-- Dmitri Popov — male, Polina's son. Kui Xin says he is dead.
-- Adam — Kui Xin's ally and network/data expert. He secures her calls through an earpiece.
+- Kui Xin — protagonist, female, player. Goes by "Black Snake" on the forum (players think Black Snake is male) and "Fer-de-lance" in the Second World, where she says she handles external operations for the Sea Without Light. She founded and leads the Sea Without Light (outpost in White Whale City). Lives in Tongling City and is on leave from university. She can open spatial vortexes, has a metal left hand and wears an iron mask. She also has the Soul-Bewitching Voice ability. She holds the 20 billion ransom.
+- Amber — male, artificial human, formerly of Mechanical Dawn. He has a silent mental-control/memory-implanting ability. Now on probation as a trusted partner of Kui Xin and knows her real face. Protects Four Leaves. Worries about Obsidian, who is imprisoned. Silver Mask is another artificial human from his batch.
+- Four Leaves — male, childlike, force-grown artificial being. Openly affectionate ("I like Fer-de-lance more") and has memorized Kui Xin's real face. Now has Amber's implanted skills but is still naive. Doing physical conditioning on a treadmill. Kui Xin privately sees him as a card she holds to keep Amber in line.
+- Adam — Kui Xin's network/data AI ally (referred to as "it"). Talks with her over a data link/earpiece.
+- Su Rong (Ash) — female, Kui Xin's teammate. Coordinates the recruits and attends meetings through her shadow double, which can't speak.
+- Augus (Depriver 777) — male, telekinetic player-killer. His body is probably in the nuclear-plant Dark Realm in Floating Port City.
+- He Kangshi — male, calls Kui Xin "sis." C-rank telekinetic and weak in combat. Oversees the bar renovation.
+- Polina — female, Popov chairwoman. Paid the ransom.
+- Abra Popov — male, Polina's brother. Publicly branded a Resistance traitor.
+- Dmitri Popov — male, Polina's son. Reportedly dead.
+- Saker (Perigon Falcon) — cared for Four Leaves and taught him manners.
 - Li Wanran — ally inside the Special Intelligence Division.
-- White Dove (male) and Dusk (female) — players who waited outside the Dark Realm with Su Rong.
-- Deprivator No. 233 — Tongling City player identity some think is Black Snake.
-- Recruit shortlist: Lancet, Golden Ring, Wei Li, Samanto.
+- White Dove (male) and Dusk (female) — players allied with Su Rong.
+- Recruits: Lancet, Golden Ring, Wei Li, Samanto (genders unspecified).
 
 Setting/terms
-- First World: home world. Tongling City is transforming, and the Dark Realm Descent is coming.
+- First World: home world. Tongling City faces the coming Dark Realm Descent.
 - Second World: run by the Federation and plutocrat families. A super AI monitors players.
 - Dark Realms: dangerous zones, possibly one-way.
-- Threats: Mechanical Dawn (Eve, weakened), the Resistance (the Federation's political red line; any link to it is fatal), and the Special Intelligence Division (its S-rank Awakened are the danger).
-- Player forum: has a death list and personal boards. Joining the Black Snake board requires revealing your First World identity.
+- Threats: Mechanical Dawn (Eve, weakened); the Resistance (any link to it is fatal); the Special Intelligence Division.
+- Kui Xin plans a structure modeled on Eve's: a front company with bases and outposts under it. The headquarters location is undecided.
 
 Recent events
-- Ch1–3: The Sea Without Light kidnapped Abra and Dmitri and demanded 20 billion. As Black Snake, Kui Xin confirmed the group is player-run and is recruiting, with Awakened getting priority.
-- Ch4: Kui Xin set her priorities (ransom, recruits, Augus). Su Rong will throw medicine and food into the Dark Realm at the next return. Kui Xin called Polina with a voice changer.
-- Ch5: Polina stalled while a Special Intelligence Division technician tried to trace the call, but Adam's encryption and line-switching beat him. As Fer-de-lance, Kui Xin offered a truce for 20 billion and gave an account number. Once the technician left, Polina secretly paid. Kui Xin then messaged that Dmitri is dead but Abra would be returned. Polina asked the Special Intelligence Division and the Investigation Department for armed support, hoping to ambush a handover. Half an hour later, an advertising airship flew past her skyscraper with Abra dangling from a rope beneath it. Its sign and flyers declared that Abra is a traitor to the plutocrats and a member of the Resistance. This puts the Popov family in grave danger.
+- Ch1–5: The Sea Without Light kidnapped Abra and Dmitri and got 20 billion from Polina. Abra was then publicly exposed as a Resistance traitor, which puts the Popov family in danger.
+- Ch6: Amber implanted combat, survival and deception skills into Four Leaves.
+- Ch7: Kui Xin, Amber and Four Leaves ate together in a warm moment. Amber explained that early artificial humans grew up semi-naturally with teachers, and anyone who couldn't learn was eliminated. Kui Xin offered Amber deeper trust, and he agreed not to betray her. She told Adam her real reasons: she has no other suitable high-ranking subordinates, and she can use Four Leaves as leverage. She took Amber, masked, to an abandoned billiards-club outpost to screen the four recruits and control any spies so they can be turned. Su Rong's shadow double attended. Kui Xin introduced herself as Fer-de-lance and announced that at least one person in the room is a traitor-in-waiting, leaving the recruits suspicious of each other.

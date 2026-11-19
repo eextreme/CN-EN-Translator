@@ -50,6 +50,7 @@ from ..text_utils import clean_raw, join_paragraphs, replace_paragraphs, split_p
 from . import workers
 from .dialogs import HistoryDialog, SettingsDialog, SyncReviewDialog, TermDialog
 from .editors import TextFrame
+from .speech import Speaker
 from .glossary_model import COL, GlossaryFilter, GlossaryModel, category_delegate, gender_delegate
 
 HELP_TEXT = """<h3>Workflow</h3>
@@ -70,6 +71,8 @@ Each uncertain-term warning also shows the other rendering; <b>Use alternative</
 <p><b>Highlights:</b> blue underline = glossary term (dotted = unconfirmed), orange = uncertain term, red = glossary term missing
 from the translation. Hover a term for its glossary entry. Clicking a paragraph highlights the matching paragraph in the other
 frame when both have the same number of paragraphs.</p>
+<p><b>Read aloud (Ctrl+R):</b> right-click selected text or a paragraph and choose <b>Read aloud</b>. Chinese and English
+use matching voices (set them in Settings). Press Ctrl+R again to stop.</p>
 <p>Earlier versions of translations and the glossary are kept automatically (Chapter → History, Glossary → History).</p>"""
 
 
@@ -82,12 +85,16 @@ class MainWindow(QMainWindow):
         self.worker: workers.Worker | None = None
         self.ai_actions: list[QAction] = []
         self._partial: dict[int, str] = {}
+        self.speaker = Speaker(self)
+        self._speech_frame: TextFrame | None = None
+        self._speech_offset = 0
 
         self.setWindowTitle(f"LN Translator {__version__}")
         self.resize(1500, 950)
         self._build_ui()
         self._build_actions()
         self._apply_font()
+        self._apply_speech_settings()
         self._set_project_enabled(False)
 
         self._glossary_timer = self._debounce(self._on_glossary_changed_debounced, 250)
@@ -136,6 +143,12 @@ class MainWindow(QMainWindow):
             f.addTermRequested.connect(self.add_term_from_selection)
             f.retranslateRequested.connect(lambda i: self.retranslate([i]))
             f.findInGlossaryRequested.connect(self.find_in_glossary)
+            f.readAloudRequested.connect(lambda f=f: self.read_aloud(f))
+            f.stopReadingRequested.connect(self.stop_reading)
+            f.is_speaking = self.speaker.is_speaking
+        self.speaker.speakingChanged.connect(self._on_speaking_changed)
+        self.speaker.wordSpoken.connect(self._on_word_spoken)
+        self.speaker.error.connect(lambda msg: QMessageBox.information(self, "Read aloud", msg))
         self.frame_a.paragraphActivated.connect(lambda i: self._link(self.frame_b, i))
         self.frame_b.paragraphActivated.connect(lambda i: self._link(self.frame_a, i))
 
@@ -400,6 +413,9 @@ class MainWindow(QMainWindow):
         self.a_simpl = act("Traditional → Simplified", self.convert_simplified, menu=m_ch)
         m_ch.addSeparator()
         self.a_hist = act("Translation history…", self.chapter_history, "Ctrl+H", menu=m_ch)
+        m_ch.addSeparator()
+        self.a_read = act("Read aloud", self.toggle_read_aloud, "Ctrl+R",
+                          "Read the selected text (or the current paragraph) aloud; press again to stop", menu=m_ch)
 
         m_g = mb.addMenu("&Glossary")
         self.a_add_term = act("Add term…", self.add_term, "Ctrl+G", menu=m_g)
@@ -425,9 +441,51 @@ class MainWindow(QMainWindow):
 
         tb.addSeparator()
         tb.addAction(self.a_hist)
+        tb.addAction(self.a_read)
 
         m_help = mb.addMenu("&Help")
         act("How to use", lambda: QMessageBox.about(self, "How to use", HELP_TEXT), "F1", menu=m_help)
+
+    def _apply_speech_settings(self) -> None:
+        self.speaker.voice_prefs = {"zh": self.settings.tts_voice_zh, "en": self.settings.tts_voice_en}
+        self.speaker.rate = self.settings.tts_rate / 10
+
+    # ----- read aloud -------------------------------------------------------
+    def toggle_read_aloud(self) -> None:
+        if self.speaker.is_speaking():
+            self.stop_reading()
+            return
+        frame = self.frame_a if self.frame_a.hasFocus() else self.frame_b if self.frame_b.hasFocus() else None
+        if frame is None:  # e.g. toolbar click: use whichever frame has a selection, else Frame B
+            frame = self.frame_a if self.frame_a.textCursor().hasSelection() else self.frame_b
+        self.read_aloud(frame)
+
+    def read_aloud(self, frame: TextFrame) -> None:
+        offset, text = frame.text_to_read()
+        if not text.strip():
+            self.statusBar().showMessage("Read aloud: select some text or place the cursor in a paragraph.", 4000)
+            return
+        self._clear_speech_highlight()
+        self._speech_frame, self._speech_offset = frame, offset
+        if not self.speaker.speak(text):
+            self._speech_frame = None
+
+    def stop_reading(self) -> None:
+        self.speaker.stop()
+        self._clear_speech_highlight()
+
+    def _clear_speech_highlight(self) -> None:
+        if self._speech_frame is not None:
+            self._speech_frame.set_speech_range(None)
+
+    def _on_word_spoken(self, start: int, length: int) -> None:
+        if self._speech_frame is not None:
+            self._speech_frame.set_speech_range(self._speech_offset + start, length)
+
+    def _on_speaking_changed(self, speaking: bool) -> None:
+        self.a_read.setText("Stop reading" if speaking else "Read aloud")
+        if not speaking:
+            self._clear_speech_highlight()
 
     def _apply_font(self) -> None:
         for f in (self.frame_a, self.frame_b):
@@ -530,6 +588,7 @@ class MainWindow(QMainWindow):
             return
         self.save_chapter(quiet=True)
         self.chapter = self.project.load_chapter(cid)
+        self.stop_reading()
         self.frame_a.load_text(self.chapter.raw)
         self.frame_b.load_text(self.chapter.translation)
         self.title_edit.setText(self.chapter.title)
@@ -1261,12 +1320,14 @@ class MainWindow(QMainWindow):
 
     # ================================================================== Settings
     def open_settings(self) -> None:
-        dlg = SettingsDialog(self, self.settings, self.test_connection)
+        voices = {lang: self.speaker.voice_names(lang) for lang in ("zh", "en")}
+        dlg = SettingsDialog(self, self.settings, self.test_connection, voices)
         self._settings_dialog = dlg
         if dlg.exec():
             self.settings = dlg.collect()
             self.settings.save()
             self._apply_font()
+            self._apply_speech_settings()
         self._settings_dialog = None
 
     _settings_dialog: SettingsDialog | None = None

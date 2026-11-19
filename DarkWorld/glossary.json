@@ -936,5 +936,49 @@
     "confirmed": true,
     "first_seen": "0005",
     "id": "d096ba15a592"
+  },
+  {
+    "zh": "通许",
+    "en": "The call",
+    "category": "other",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0005",
+    "id": "21865d3528d2"
+  },
+  {
+    "zh": "广告飞空艇",
+    "en": "advertising blimp",
+    "category": "item",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0005",
+    "id": "361b6091ea98"
+  },
+  {
+    "zh": "董事长",
+    "en": "Chairman",
+    "category": "title",
+    "aliases": [],
+    "gender": "female",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0005",
+    "id": "43dcd7ff7dfd"
+  },
+  {
+    "zh": "猎隼",
+    "en": "Perigon Falcon",
+    "category": "character",
+    "aliases": [],
+    "gender": "male",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0006",
+    "id": "ca16e14d8e2f"
   }
 ]
