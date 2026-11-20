@@ -1,0 +1,57 @@
+{
+  "title": "",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 35",
+      "paragraph": 34,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "联邦",
+      "suggested_en": "Federation",
+      "category": "organization",
+      "reason": "Glossary term not found in paragraph 52",
+      "paragraph": 51,
+      "entry_id": "e71bc553d563",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "联邦",
+      "suggested_en": "Federation",
+      "category": "organization",
+      "reason": "Glossary term not found in paragraph 54",
+      "paragraph": 53,
+      "entry_id": "e71bc553d563",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "财阀",
+      "suggested_en": "plutocrats / plutocrat families",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 56",
+      "paragraph": 55,
+      "entry_id": "91884db244df",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "阿布拉·波波夫",
+      "suggested_en": "Abra Popov",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 60",
+      "paragraph": 59,
+      "entry_id": "69872343d786",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-173336-127"
+}

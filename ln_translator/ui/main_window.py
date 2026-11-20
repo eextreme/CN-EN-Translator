@@ -75,8 +75,11 @@ from the translation. Hover a term for its glossary entry. Clicking a paragraph 
 frame when both have the same number of paragraphs.</p>
 <p><b>Read aloud (Ctrl+R):</b> right-click selected text or a paragraph and choose <b>Read aloud</b>. Chinese and English
 use matching voices (set them in Settings). Press Ctrl+R again to stop.</p>
+<p><b>Read aloud on long hover:</b> turn it on in the Dictionary menu, then rest the mouse on a character, word or
+selected phrase (in either frame) for 5 seconds to hear it. The delay can be changed in Settings.</p>
 <p><b>Pop-up dictionary:</b> hover a Chinese word in Frame A for its pinyin and meaning (CC-CEDICT). The Dictionary
-panel on the right shows the full entry. <b>Ctrl+E</b> asks Claude to explain the word (or your selection) in its sentence;
+panel on the right shows the full entry, and the word is read aloud once when its pop-up appears (turn this off with
+Dictionary → Speak word when pop-up appears). <b>Ctrl+E</b> asks Claude to explain the word (or your selection) in its sentence;
 answers are saved. <b>Ctrl+D</b> stars a word for your word list, and words you look up more than once appear there too.</p>
 <p>Earlier versions of translations and the glossary are kept automatically (Chapter → History, Glossary → History).</p>"""
 
@@ -161,11 +164,14 @@ class MainWindow(QMainWindow):
             f.readAloudRequested.connect(lambda f=f: self.read_aloud(f))
             f.stopReadingRequested.connect(self.stop_reading)
             f.is_speaking = self.speaker.is_speaking
+            f.hoverSpeakRequested.connect(self.speak_hovered)
         self.speaker.speakingChanged.connect(self._on_speaking_changed)
         self.speaker.wordSpoken.connect(self._on_word_spoken)
         self.speaker.error.connect(lambda msg: QMessageBox.information(self, "Read aloud", msg))
         self.frame_a.hover_lookup = self._hover_lookup
         self.frame_a.word_at = self._word_at
+        self.frame_a.speak_unit_at = self._speak_unit_at
+        self.frame_a.lookupShown.connect(self._on_lookup_shown)
         self.frame_a.explainRequested.connect(lambda: self.explain_word(source="cursor"))
         self.frame_a.starRequested.connect(lambda: self.star_word(source="cursor"))
         self.frame_a.paragraphActivated.connect(lambda i: self._link(self.frame_b, i))
@@ -465,6 +471,12 @@ class MainWindow(QMainWindow):
         act("Star word", lambda: self.star_word(source="auto"), "Ctrl+D",
             "Add the hovered word (or the selection) to your word list", menu=m_d)
         act("Speak word", self.speak_current_word, "Ctrl+Shift+R", menu=m_d)
+        self.a_hover_speak = act("Read aloud on long hover", self._toggle_hover_speak, menu=m_d)
+        self.a_hover_speak.setCheckable(True)
+        self.a_hover_speak.setChecked(self.settings.hover_speak)
+        self.a_auto_speak = act("Speak word when pop-up appears", self._toggle_auto_speak, menu=m_d)
+        self.a_auto_speak.setCheckable(True)
+        self.a_auto_speak.setChecked(self.settings.dict_auto_speak)
         m_d.addSeparator()
         m_d.addAction(self.dict_dock.toggleViewAction())
         act("Download / update CC-CEDICT…", self.download_dictionary, menu=m_d)
@@ -494,6 +506,8 @@ class MainWindow(QMainWindow):
     def _apply_speech_settings(self) -> None:
         self.speaker.voice_prefs = {"zh": self.settings.tts_voice_zh, "en": self.settings.tts_voice_en}
         self.speaker.rate = self.settings.tts_rate / 10
+        for f in (self.frame_a, self.frame_b):
+            f.set_hover_speak(self.settings.hover_speak, self.settings.hover_speak_seconds)
 
     # ----- read aloud -------------------------------------------------------
     def toggle_read_aloud(self) -> None:
@@ -1452,6 +1466,48 @@ class MainWindow(QMainWindow):
         w.signals.finished.connect(done)
         w.signals.failed.connect(failed)
         workers.start(w)
+
+    def _toggle_hover_speak(self) -> None:
+        self.settings.hover_speak = self.a_hover_speak.isChecked()
+        self.settings.save()
+        self._apply_speech_settings()
+        if self.settings.hover_speak:
+            secs = f"{self.settings.hover_speak_seconds:g}"
+            self.statusBar().showMessage(f"Rest the mouse on a word or selected phrase for {secs} s to hear it.", 5000)
+
+    def _toggle_auto_speak(self) -> None:
+        self.settings.dict_auto_speak = self.a_auto_speak.isChecked()
+        self.settings.save()
+
+    def _on_lookup_shown(self, word: str) -> None:
+        """Read a word aloud once when its pop-up dictionary appears, unless a paragraph is being read aloud."""
+        if not self.settings.dict_auto_speak or not word.strip():
+            return
+        if self.speaker.is_speaking() and self._speech_frame is not None:
+            return
+        self._speech_frame = None
+        self.speaker.speak(word)  # replaces a previous word still being spoken
+
+    def speak_hovered(self, text: str) -> None:
+        if self.speaker.is_speaking():
+            return
+        self._speech_frame = None
+        self.speaker.speak(text)
+
+    def _speak_unit_at(self, text: str, pos: int) -> tuple[int, int] | None:
+        """(start, end) of what a long hover at text[pos] reads in Frame A: a glossary term, else the dictionary word,
+        else the Latin word or single character."""
+        g = self._glossary_at(text, pos)
+        if g:
+            return g[0], g[1]
+        if self.dictionary:
+            res = self.dictionary.look_up_at(text, pos)
+            if res:
+                return res.primary.start, res.primary.end
+        for m in re.finditer(r"[A-Za-z0-9'’-]+", text):
+            if m.start() <= pos < m.end():
+                return m.span()
+        return (pos, pos + 1) if text[pos].isalnum() else None
 
     def _toggle_hover(self) -> None:
         self.settings.dict_hover = self.a_hover.isChecked()

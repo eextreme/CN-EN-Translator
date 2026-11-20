@@ -1090,5 +1090,93 @@
     "confirmed": true,
     "first_seen": "0008",
     "id": "91033bb70291"
+  },
+  {
+    "zh": "黑海市",
+    "en": "Black Sea City",
+    "category": "place",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0009",
+    "id": "d784b5da4813"
+  },
+  {
+    "zh": "习凉",
+    "en": "Xi Liang",
+    "category": "character",
+    "aliases": [],
+    "gender": "male",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0009",
+    "id": "0e2611d7a260"
+  },
+  {
+    "zh": "联邦行政中心",
+    "en": "Federal Administrative Center",
+    "category": "place",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0009",
+    "id": "6521f192e443"
+  },
+  {
+    "zh": "荆楚",
+    "en": "Jingchu",
+    "category": "place",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0009",
+    "id": "92c1db62510a"
+  },
+  {
+    "zh": "空间漩涡",
+    "en": "spatial vortex",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0009",
+    "id": "fca2ae7ae99f"
+  },
+  {
+    "zh": "黑蛇板块",
+    "en": "Black Snake board",
+    "category": "other",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0009",
+    "id": "48f50d7d24c6"
+  },
+  {
+    "zh": "夜蝉",
+    "en": "Night Cicada",
+    "category": "character",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0009",
+    "id": "14bb24d70cf6"
+  },
+  {
+    "zh": "创业团队",
+    "en": "startup team",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0009",
+    "id": "bf5985306482"
   }
 ]

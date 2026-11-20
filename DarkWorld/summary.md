@@ -1,29 +1,29 @@
 Key characters
-- Kui Xin — protagonist, female, player. Goes by "Black Snake" on the forum (players think Black Snake is male) and "Fer-de-lance" in the Second World. She founded and leads the Sea Without Light. Lives in Tongling City and is on leave from university. She can open spatial vortexes, has a silver-gray metal left hand and wears an iron mask. Her abilities include Soul-Bewitching Voice, Probing Eye and Flesh Regeneration, and she secretly has the ability to deprive (in the past she claimed Hyper-Speed Healing as cover). She holds the 20 billion ransom.
-- Amber — male, artificial human, formerly of Mechanical Dawn. Has a silent mental-control/memory-implanting ability (his eyes glow blue). Trusted partner on probation who knows Kui Xin's real face. Protects Four Leaves and worries about the imprisoned Obsidian.
-- Four Leaves — male, childlike artificial being, affectionate toward Kui Xin. Has Amber's implanted skills. Kui Xin sees him as leverage over Amber.
-- Adam — Kui Xin's network/data AI ally ("it").
-- Su Rong (Ash) — female, teammate. Attends meetings through her shadow double, which can't speak but can form a shield.
+- Kui Xin — protagonist, female, player. Goes by "Black Snake" on the forum (players think Black Snake is male) and "Fer-de-lance" in the Second World. She leads the Sea Without Light and lives in Tongling City. She opens spatial vortexes, has a silver-gray metal left hand and wears an iron mask. Her abilities are Soul-Bewitching Voice, Probing Eye, Flesh Regeneration and a secret ability to deprive. She holds the 20 billion ransom, knows nothing about business and has cold killing intent toward Ye Chan.
+- Amber — male, artificial human, formerly of Mechanical Dawn. He has silent mental control and memory implanting (his eyes glow blue). He is a trusted partner on probation and knows Kui Xin's real face. He protects Four Leaves and worries about Obsidian.
+- Four Leaves — male, childlike artificial being, affectionate toward Kui Xin. Has Amber's implanted skills.
+- Adam — Kui Xin's network/data AI ally ("it"). It has back doors into the Heihai City Investigation Department.
+- Su Rong (Ash) — female, teammate. Uses a shadow double that can't speak but can form a shield.
 - Augus (Depriver 777) — male, telekinetic player-killer. His body is probably in the nuclear-plant Dark Realm in Floating Port City.
-- He Kangshi — male, calls Kui Xin "sis." C-rank telekinetic. Oversees the bar renovation.
+- He Kangshi — male, calls Kui Xin "sis." C-rank telekinetic who oversees the bar renovation.
 - Polina — female, Popov chairwoman. Her brother Abra was branded a Resistance traitor, and her son Dmitri is reportedly dead.
-- Li Wanran — ally inside the Special Intelligence Division.
+- Li Wanran — ally in the Special Intelligence Division.
 - White Dove (male) and Dusk (female) — Su Rong's allies.
-- New members:
-  - Golden Ring — male, East Asian player on Black Snake's forum. B-rank explosion ability that is hard to control. Eager.
-  - Wei Li — female, streetwear, "unemployed drifter." C-rank mind reading that doesn't work on higher-rank users. Holds a grudge against the plutocrats.
-  - Lancet — male, player, Deprivator No. 5116. Fakes being C-rank. Has Flesh Regeneration, B-rank Face-Changing and E-rank Skin Hardening, and is good with firearms. Runs a small company he built in the real world, which Kui Xin values highly.
-- Samanto — male, foreign, claimed to be a bounty hunter. He was the planted spy and was captured.
+- Golden Ring — male, B-rank explosion ability that is hard to control. Assigned as bodyguard for Lancet's squad.
+- Wei Li — female, C-rank mind reader. In Lancet's squad to help with negotiations.
+- Lancet — male, Deprivator No. 5116. Has Face-Changing, Flesh Regeneration and Skin Hardening, and is good with firearms. A cautious startup owner who studied a related field at university. Now tasked with founding the organization's front company.
+- Samanto — male, captured spy.
+- Xi Liang — technical talent in Heihai City whom Kui Xin plans to recruit.
+- Xie Ganqing — one of the hacker trio. Son of the richest man in Jingchu with management experience, now living in an inland Second World city. A poaching target.
+- Ye Chan — person Kui Xin wants to confirm is still in White Whale City (hostile).
 
 Setting/terms
-- First World: home world. Tongling City faces the coming Dark Realm Descent.
-- Second World: run by the Federation and plutocrat families. A super AI monitors players.
-- Dark Realms: dangerous zones, possibly one-way.
-- Deprivators: players who gain abilities by killing. They have a bad reputation on the forum. There is a rumor that No. 233 works with Black Snake.
-- Threats: Mechanical Dawn (Eve, weakened), the Resistance and the Special Intelligence Division.
-- Kui Xin's planned structure: a front company with bases and outposts under it.
+- First World: home world, where Tongling City faces the Dark Realm Descent. Second World: run by the Federation and plutocrats, with an AI monitoring players and a culture of "amusing itself to death."
+- Dark Realms: dangerous zones. Deprivators: players who gain abilities by killing.
+- Threats: Mechanical Dawn (its HQ has left Heihai City), the Resistance, the Special Intelligence Division (HQ in the Federal Administrative Center) and the Investigation Department.
+- Heihai City: the port where Kui Xin first descended. It has several competing plutocrat powers and is near the Federal Administrative Center.
 
 Recent events
-- Ch1–6: The Sea Without Light kidnapped Abra and Dmitri and got 20 billion from Polina. Abra was exposed as a traitor. Amber implanted skills into Four Leaves.
-- Ch7: Kui Xin gave Amber deeper trust. At the billiards-club outpost she told the four recruits that one of them was a traitor-in-waiting.
-- Ch8: The recruits introduced themselves and stated their ranks. Wei Li's mind reading failed on Samanto and Lancet, which exposed their false C-rank claims. Kui Xin ordered Samanto seized. He fired an air bullet that Su Rong's shadow blocked. Amber dazed him, Wei Li hit him with a chair and Lancet knocked him out, breaking his jaw. Amber sedated Samanto and took him away through a vortex. Golden Ring, Wei Li and Lancet became members. Golden Ring and Wei Li left with Ash to stand by. Alone with Kui Xin, Lancet admitted he is a Deprivator who hid his rank for self-protection, and she accepted him eagerly.
+- Ch1–7: The Sea Without Light got 20 billion from Polina through the Abra/Dmitri kidnapping, and Abra was exposed as a traitor.
+- Ch8: At the recruit interviews, Wei Li's mind reading exposed Samanto and Lancet as faking C-rank. Samanto was subdued and captured. Golden Ring, Wei Li and Lancet joined. Lancet admitted privately that he is a Deprivator.
+- Ch9: Kui Xin valued Lancet mainly for his business skills. She tasked him with founding a legitimate front company to bring in funding, act as a bridge to society and screen talent. They chose media/advertising, and he will write a business plan. He estimated at least 2 million in startup capital and was relieved to learn no loan is needed. The legal-identity issue is still pending. Lancet, Wei Li and Golden Ring form one squad. Kui Xin picked Heihai City as the base for the business, and Adam agreed. Two of her three urgent problems are solved, and only Depriver 777 remains. Before going to Floating Port City she will read the blood of Samanto and the interviewee with a bomb in his heart, and confirm whether Ye Chan is still in White Whale City.

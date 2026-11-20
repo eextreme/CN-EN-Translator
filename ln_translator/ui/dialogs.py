@@ -22,6 +22,7 @@ from PySide6.QtWidgets import (
     QListWidgetItem,
     QPlainTextEdit,
     QPushButton,
+    QDoubleSpinBox,
     QSpinBox,
     QSplitter,
     QTableWidget,
@@ -276,6 +277,15 @@ class SettingsDialog(QDialog):
         self.tts_rate.setValue(settings.tts_rate)
         self.tts_rate.setToolTip("-10 = slowest, 0 = normal, 10 = fastest")
         form.addRow("Read-aloud speed", self.tts_rate)
+        self.hover_speak_seconds = QDoubleSpinBox()
+        self.hover_speak_seconds.setRange(0.5, 30)
+        self.hover_speak_seconds.setSingleStep(0.5)
+        self.hover_speak_seconds.setDecimals(1)
+        self.hover_speak_seconds.setSuffix(" s")
+        self.hover_speak_seconds.setValue(settings.hover_speak_seconds)
+        self.hover_speak_seconds.setToolTip("How long the mouse must rest on a word before it is read aloud "
+                                            "(Dictionary → Read aloud on long hover)")
+        form.addRow("Long-hover read-aloud delay", self.hover_speak_seconds)
 
         self.patterns = QPlainTextEdit("\n".join(settings.cleanup_patterns))
         self.patterns.setToolTip("One regular expression per line. Matches are removed by Clean Raw.")
@@ -317,6 +327,7 @@ class SettingsDialog(QDialog):
         s.tts_voice_zh = self.voice_zh.currentData() or ""
         s.tts_voice_en = self.voice_en.currentData() or ""
         s.tts_rate = self.tts_rate.value()
+        s.hover_speak_seconds = self.hover_speak_seconds.value()
         s.cleanup_patterns = [p for p in self.patterns.toPlainText().splitlines() if p.strip()]
         return s
 

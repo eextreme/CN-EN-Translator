@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 
-from PySide6.QtCore import QEvent, Qt, Signal
+from PySide6.QtCore import QEvent, Qt, QTimer, Signal
 from PySide6.QtGui import QColor, QFont, QSyntaxHighlighter, QTextCharFormat, QTextCursor, QTextFormat
 from PySide6.QtWidgets import QMenu, QPlainTextEdit, QTextEdit, QToolTip
 
@@ -110,6 +110,8 @@ class TextFrame(QPlainTextEdit):
     stopReadingRequested = Signal()
     explainRequested = Signal()  # explain the selection, or the word at the text cursor
     starRequested = Signal()
+    hoverSpeakRequested = Signal(str)  # the mouse rested on a word/phrase long enough to read it aloud
+    lookupShown = Signal(str)  # the pop-up dictionary just appeared for a new word/phrase (its text)
 
     def __init__(self, side: str, placeholder: str):
         super().__init__()
@@ -127,8 +129,17 @@ class TextFrame(QPlainTextEdit):
         self.hover_lookup = None
         self.word_at = None
         self._lookup_range: tuple[int, int] | None = None  # (doc position, length) of the looked-up word
-        if side == "zh":
-            self.setMouseTracking(True)
+        # Read aloud on long hover, configured by the main window:
+        #   speak_unit_at(text, pos) -> (start, end) in block coordinates of the word/phrase at pos, or None
+        self.speak_unit_at = None
+        self.hover_speak_enabled = False
+        self._hover_unit: tuple[int, int] | None = None  # (doc start, doc end) under the mouse
+        self._hover_spoken = False  # already read the current unit; wait for the mouse to move to another one
+        self._hover_timer = QTimer(self)
+        self._hover_timer.setSingleShot(True)
+        self._hover_interval = 5000
+        self._hover_timer.timeout.connect(self._on_hover_timeout)
+        self.setMouseTracking(True)
         self.cursorPositionChanged.connect(self._on_cursor)
 
     # ----- helpers ----------------------------------------------------------
@@ -298,7 +309,10 @@ class TextFrame(QPlainTextEdit):
                 found = self.hover_lookup(block, text, pos, gmatch)
                 if found:
                     html, start, end = found
+                    is_new = self._lookup_range != (block.position() + start, end - start)
                     self.set_lookup_range(block.position() + start, end - start)
+                    if is_new:  # once per appearance, not on every tooltip event while resting on the same word
+                        self.lookupShown.emit(text[start:end])
             if html is None and gmatch:
                 html = self._glossary_html(gmatch[2])
             if html:
@@ -309,10 +323,76 @@ class TextFrame(QPlainTextEdit):
             return True
         if e.type() == QEvent.Leave:
             self.set_lookup_range(None)
+            self._reset_hover_speak()
         return super().event(e)
+
+    # ----- read aloud on long hover ------------------------------------------
+    def set_hover_speak(self, enabled: bool, seconds: float) -> None:
+        self.hover_speak_enabled = enabled
+        self._hover_interval = max(100, int(seconds * 1000))
+        if not enabled:
+            self._reset_hover_speak()
+
+    def _reset_hover_speak(self) -> None:
+        self._hover_timer.stop()
+        self._hover_unit = None
+        self._hover_spoken = False
+
+    def _unit_under(self, point) -> tuple[int, int] | None:
+        """(doc start, doc end) of what a long hover at `point` would read: the selection if the mouse is on it,
+        else the word/phrase under the mouse."""
+        hit = self.char_at(point)
+        if hit is None:
+            return None
+        block, pos = hit
+        doc_pos = block.position() + pos
+        sel = self.textCursor()
+        if sel.hasSelection() and sel.selectionStart() <= doc_pos < sel.selectionEnd():
+            return sel.selectionStart(), sel.selectionEnd()
+        text = block.text()
+        found = None
+        if self.speak_unit_at is not None:
+            found = self.speak_unit_at(text, pos)
+        else:
+            for m in re.finditer(r"[\w'’-]+", text):
+                if m.start() <= pos < m.end():
+                    found = m.span()
+                    break
+        if not found:
+            return None
+        return block.position() + found[0], block.position() + found[1]
+
+    def _track_hover_speak(self, point) -> None:
+        if not self.hover_speak_enabled:
+            return
+        unit = self._unit_under(point)
+        if unit == self._hover_unit:
+            return
+        self._hover_unit = unit
+        self._hover_spoken = False
+        if unit is None:
+            self._hover_timer.stop()
+        else:
+            self._hover_timer.start(self._hover_interval)  # restart the countdown for the new word
+
+    def _on_hover_timeout(self) -> None:
+        if self._hover_unit is None or self._hover_spoken or not self.underMouse():
+            return
+        if self.is_speaking():  # don't cut off something being read aloud; try again shortly
+            self._hover_timer.start(1000)
+            return
+        start, end = self._hover_unit
+        c = QTextCursor(self.document())
+        c.setPosition(start)
+        c.setPosition(min(end, self.document().characterCount() - 1), QTextCursor.KeepAnchor)
+        text = c.selectedText().replace("\u2029", "\n").strip()
+        if text:
+            self._hover_spoken = True
+            self.hoverSpeakRequested.emit(text)
 
     def mouseMoveEvent(self, e):  # noqa: N802
         super().mouseMoveEvent(e)
+        self._track_hover_speak(e.position().toPoint())
         if self._lookup_range is not None:
             hit = self.char_at(e.position().toPoint())
             start, length = self._lookup_range

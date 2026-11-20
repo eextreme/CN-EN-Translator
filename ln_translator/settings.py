@@ -33,6 +33,9 @@ class Settings:
     tts_rate: int = 0  # -10 (slow) .. 10 (fast)
     dict_hover: bool = True  # pop-up dictionary when hovering Chinese text
     explain_effort: str = "low"  # effort for "Explain word"
+    hover_speak: bool = False  # read a word/phrase aloud after the mouse rests on it
+    hover_speak_seconds: float = 5.0
+    dict_auto_speak: bool = True  # read a word aloud once when its pop-up dictionary appears
 
     @classmethod
     def load(cls) -> "Settings":
