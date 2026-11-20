@@ -207,3 +207,57 @@ PING_SCHEMA = {
     "required": ["ok"],
     "additionalProperties": False,
 }
+
+
+# --------------------------------------------------------------------------- explain a word (reading help)
+
+EXPLAIN_SYSTEM = """You help a reader who speaks Mandarin fluently but reads Chinese less well. They are reading a \
+Chinese web novel and want to understand one word or phrase in its sentence. Typical requests are literary or formal \
+words (书面语), idioms (成语), classical phrasing and genre jargon (cultivation realms, techniques, sect titles).
+
+Answer briefly and concretely:
+- `pinyin`: with tone marks, for the word exactly as written
+- `meaning`: a short English gloss for THIS context (a few words)
+- `explanation_zh`: a plain spoken-Mandarin paraphrase (大白话), one or two short sentences, as you would explain it \
+to a native speaker who doesn't recognise the written form
+- `explanation_en`: one to three sentences on what it means here, any nuance or connotation, and how the genre uses \
+it. If it is a 成语, give the literal meaning and the source story in one sentence.
+- `breakdown`: what each character (or meaningful part) contributes, e.g. "筑 build + 基 foundation". Empty for a \
+single character.
+- `examples`: up to two short, natural example sentences using it (zh with en), different from the given sentence. \
+Empty if it is a name unique to the story.
+- `is_story_term`: true if it is a name or term specific to this novel rather than general Chinese."""
+
+EXPLAIN_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "pinyin": {"type": "string"},
+        "meaning": {"type": "string"},
+        "explanation_zh": {"type": "string"},
+        "explanation_en": {"type": "string"},
+        "breakdown": {"type": "string"},
+        "examples": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {"zh": {"type": "string"}, "en": {"type": "string"}},
+                "required": ["zh", "en"],
+                "additionalProperties": False,
+            },
+        },
+        "is_story_term": {"type": "boolean"},
+    },
+    "required": ["pinyin", "meaning", "explanation_zh", "explanation_en", "breakdown", "examples", "is_story_term"],
+    "additionalProperties": False,
+}
+
+
+def build_explain_prompt(word: str, sentence: str, novel: str = "", dictionary_hint: str = "", glossary_hint: str = "") -> str:
+    parts = [f"## Word\n{word}", f"## Sentence\n{sentence.strip() or '(no context)'}"]
+    if novel:
+        parts.append(f"## Novel\n{novel}")
+    if glossary_hint:
+        parts.append(f"## The translator's glossary entry\n{glossary_hint}")
+    if dictionary_hint:
+        parts.append(f"## Dictionary (CC-CEDICT) says\n{dictionary_hint}")
+    return "\n\n".join(parts)

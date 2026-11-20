@@ -49,6 +49,20 @@ against your Claude plan, and the status bar shows your 5-hour and 7-day plan us
   the word being spoken is highlighted in green. Press Ctrl+R again to stop. Pick voices and speed in Settings.
   Chinese needs a Chinese Windows voice: Settings → Time & language → Language & region → add Chinese (Simplified)
   with Text-to-speech.
+- **Pop-up dictionary (reading help):** hover a Chinese word in Frame A to see its pinyin and meaning. The longest
+  dictionary word starting at the hovered character is shown (hovering 运 in 运转 shows 运转), along with a character
+  breakdown and any longer word around it. Glossary terms show their glossary entry first. The **Dictionary** panel on
+  the right has the full entry and the sentence.
+  - **Explain (Ctrl+E):** asks Claude what the hovered word (or your selection) means *in its sentence*. You get a
+    spoken-Mandarin paraphrase, an English explanation, the character breakdown and examples. This covers 成语, literary words and
+    genre jargon that the dictionary lacks. Answers are saved, so asking again is free ("Explain again" in the panel
+    re-asks). The effort level is set in Settings.
+  - **Word list:** **Star (Ctrl+D)** keeps a word. Every hover is counted once per chapter visit, and by default the list
+    shows starred words, explained words and words you have looked up two or more times: the ones you keep forgetting.
+    Stored in `%APPDATA%\LNTranslator\wordlist.json`.
+  - **Dictionary → Look up words on hover** turns the pop-ups off. **Speak word (Ctrl+Shift+R)** reads the word aloud.
+  - The dictionary is [CC-CEDICT](https://cc-cedict.org) (CC BY-SA 4.0). The panel offers a one-time download (~10 MB,
+    stored in `%APPDATA%\LNTranslator`), and after that it works offline.
 - **Raw text:** **Clean raw** removes site watermarks and ads (the patterns are editable in Settings).
   **Traditional → Simplified** converts the Chinese text.
 - **Files:** load chapter text from `.txt` files (UTF-8, GB18030 and Big5 are detected), or export all translations

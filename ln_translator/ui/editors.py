@@ -108,6 +108,8 @@ class TextFrame(QPlainTextEdit):
     findInGlossaryRequested = Signal(str)
     readAloudRequested = Signal()
     stopReadingRequested = Signal()
+    explainRequested = Signal()  # explain the selection, or the word at the text cursor
+    starRequested = Signal()
 
     def __init__(self, side: str, placeholder: str):
         super().__init__()
@@ -119,6 +121,14 @@ class TextFrame(QPlainTextEdit):
         self._suppress = False
         self._speech_range: tuple[int, int] | None = None  # (doc position, length) of the word being read aloud
         self.is_speaking = lambda: False  # set by the main window
+        # Pop-up dictionary hooks (Frame A only), set by the main window:
+        #   hover_lookup(block, text, pos, glossary_match) -> (tooltip_html, start, end) in block coordinates, or None
+        #   word_at(text, pos) -> the dictionary word at pos, for menu labels
+        self.hover_lookup = None
+        self.word_at = None
+        self._lookup_range: tuple[int, int] | None = None  # (doc position, length) of the looked-up word
+        if side == "zh":
+            self.setMouseTracking(True)
         self.cursorPositionChanged.connect(self._on_cursor)
 
     # ----- helpers ----------------------------------------------------------
@@ -218,6 +228,16 @@ class TextFrame(QPlainTextEdit):
                 sel.format.setProperty(QTextFormat.FullWidthSelection, True)
                 sel.cursor = QTextCursor(block)
                 sels.append(sel)
+        if self._lookup_range is not None:
+            start, length = self._lookup_range
+            sel = QTextEdit.ExtraSelection()
+            sel.format.setBackground(QColor(242, 201, 76, 110))
+            cur = QTextCursor(self.document())
+            end = self.document().characterCount() - 1
+            cur.setPosition(min(start, end))
+            cur.setPosition(min(start + length, end), QTextCursor.KeepAnchor)
+            sel.cursor = cur
+            sels.append(sel)
         if self._speech_range is not None:
             start, length = self._speech_range
             sel = QTextEdit.ExtraSelection()
@@ -235,46 +255,124 @@ class TextFrame(QPlainTextEdit):
         super().focusInEvent(e)
         self._update_selections()
 
-    # ----- tooltips ---------------------------------------------------------
+    # ----- tooltips & pop-up dictionary -----------------------------------
+    def char_at(self, point) -> tuple[object, int] | None:
+        """(block, index in block) of the character under `point`, or None if the point is not over text."""
+        cur = self.cursorForPosition(point)
+        block = cur.block()
+        pos = cur.positionInBlock()
+        rect = self.cursorRect(cur)
+        if point.x() < rect.x() and pos > 0:  # cursorForPosition picks the nearest gap; we want the glyph under the mouse
+            pos -= 1
+        if not (0 <= pos < len(block.text())):
+            return None
+        c = QTextCursor(block)
+        c.setPosition(block.position() + pos)
+        left = self.cursorRect(c)
+        c.setPosition(block.position() + pos + 1)
+        right = self.cursorRect(c)
+        if right.y() == left.y() and not (left.x() - 1 <= point.x() <= right.x() + 1):
+            return None  # past the end of a line
+        if not (left.top() - 2 <= point.y() <= left.bottom() + 2):
+            return None
+        return block, pos
+
+    def set_lookup_range(self, start: int | None, length: int = 0) -> None:
+        new = None if start is None else (start, length)
+        if new != self._lookup_range:
+            self._lookup_range = new
+            self._update_selections()
+
     def event(self, e):
         if e.type() == QEvent.ToolTip:
-            cur = self.cursorForPosition(e.pos())
-            block = cur.block()
-            pos = cur.positionInBlock()
-            entry = self._entry_at(block.text(), pos)
-            if entry:
-                lines = [f"<b>{entry.zh}</b> → <b>{entry.en}</b>", f"{entry.category}"
-                         + (f", {entry.gender}" if entry.gender else "")
-                         + ("" if entry.confirmed else " (unconfirmed)")]
-                if entry.aliases:
-                    lines.append("Aliases: " + ", ".join(entry.aliases))
-                if entry.notes:
-                    lines.append(entry.notes)
-                QToolTip.showText(e.globalPos(), "<br>".join(lines), self)
+            hit = self.char_at(e.pos())
+            if hit is None:
+                QToolTip.hideText()
+                self.set_lookup_range(None)
+                return True
+            block, pos = hit
+            text = block.text()
+            gmatch = self._glossary_match_at(text, pos)
+            html = None
+            if self.side == "zh" and self.hover_lookup is not None:
+                found = self.hover_lookup(block, text, pos, gmatch)
+                if found:
+                    html, start, end = found
+                    self.set_lookup_range(block.position() + start, end - start)
+            if html is None and gmatch:
+                html = self._glossary_html(gmatch[2])
+            if html:
+                QToolTip.showText(e.globalPos(), html, self)
             else:
                 QToolTip.hideText()
+                self.set_lookup_range(None)
             return True
+        if e.type() == QEvent.Leave:
+            self.set_lookup_range(None)
         return super().event(e)
 
-    def _entry_at(self, text: str, pos: int) -> GlossaryEntry | None:
+    def mouseMoveEvent(self, e):  # noqa: N802
+        super().mouseMoveEvent(e)
+        if self._lookup_range is not None:
+            hit = self.char_at(e.position().toPoint())
+            start, length = self._lookup_range
+            if hit is None or not (start <= hit[0].position() + hit[1] < start + length):
+                self.set_lookup_range(None)
+
+    @staticmethod
+    def _glossary_html(entry: GlossaryEntry) -> str:
+        lines = [f"<b>{entry.zh}</b> → <b>{entry.en}</b>", f"{entry.category}"
+                 + (f", {entry.gender}" if entry.gender else "")
+                 + ("" if entry.confirmed else " (unconfirmed)")]
+        if entry.aliases:
+            lines.append("Aliases: " + ", ".join(entry.aliases))
+        if entry.notes:
+            lines.append(entry.notes)
+        return "<br>".join(lines)
+
+    def _glossary_match_at(self, text: str, pos: int) -> tuple[int, int, GlossaryEntry] | None:
         h = self.highlighter
         if self.side == "zh":
             for s, end, entry in h.glossary.matches(text):
                 if s <= pos < end:
-                    return entry
+                    return s, end, entry
         elif h.en_rx:
             for m in h.en_rx.finditer(text):
                 if m.start() <= pos < m.end():
-                    return h.en_map.get(m.group(0).lower())
+                    entry = h.en_map.get(m.group(0).lower())
+                    return (m.start(), m.end(), entry) if entry else None
         return None
+
+    def selected_or_cursor(self) -> tuple[str, object, int]:
+        """(selected text or '', block, index in block) — the selection start, or the text cursor position."""
+        cur = self.textCursor()
+        sel = cur.selectedText().replace(PARAGRAPH_SEPARATOR, "\n").strip() if cur.hasSelection() else ""
+        c = QTextCursor(self.document())
+        c.setPosition(cur.selectionStart())
+        return sel, c.block(), c.positionInBlock()
 
     # ----- context menu -----------------------------------------------------
     def contextMenuEvent(self, e):  # noqa: N802
         if not self.textCursor().hasSelection():  # right-click places the cursor, so "read paragraph" uses the clicked one
-            self.setTextCursor(self.cursorForPosition(e.pos()))
+            hit = self.char_at(e.pos())
+            if hit is not None:  # exactly before the clicked character, so "Explain" uses the word under the mouse
+                cur = QTextCursor(self.document())
+                cur.setPosition(hit[0].position() + hit[1])
+                self.setTextCursor(cur)
+            else:
+                self.setTextCursor(self.cursorForPosition(e.pos()))
         menu: QMenu = self.createStandardContextMenu()
         selected = self.textCursor().selectedText().strip()
         menu.addSeparator()
+        if self.side == "zh" and self.word_at is not None:
+            target = selected if selected and len(selected) <= 20 else None
+            if target is None and not selected:
+                _sel, block, pos = self.selected_or_cursor()
+                target = self.word_at(block.text(), pos)
+            if target:
+                menu.addAction(f"Explain “{target}”\tCtrl+E", self.explainRequested.emit)
+                menu.addAction(f"Star “{target}” in word list", self.starRequested.emit)
+                menu.addSeparator()
         if selected and len(selected) <= 60:
             menu.addAction(f"Add “{selected}” to glossary…", lambda: self.addTermRequested.emit(selected, self.side))
             menu.addAction(f"Find “{selected}” in glossary", lambda: self.findInGlossaryRequested.emit(selected))

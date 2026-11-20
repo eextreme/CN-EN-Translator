@@ -261,3 +261,24 @@ def _dedupe(warnings: list[Warning]) -> list[Warning]:
         seen.add(key)
         out.append(w)
     return out
+
+
+def explain_word(
+    bridge: ClaudeBridge,
+    word: str,
+    sentence: str,
+    progress: ProgressFn,
+    cancel: threading.Event,
+    novel: str = "",
+    dictionary_hint: str = "",
+    glossary_hint: str = "",
+    effort: str = "low",
+) -> tuple[dict, TotalStats]:
+    """Ask Claude what a word means in its sentence (reading help). Returns the EXPLAIN_SCHEMA dict."""
+    stats = TotalStats()
+    prompt = prompts.build_explain_prompt(word, sentence, novel, dictionary_hint, glossary_hint)
+    res = bridge.run(prompt, prompts.EXPLAIN_SYSTEM, prompts.EXPLAIN_SCHEMA, progress, cancel, effort=effort, label="Explain")
+    stats.add(res.stats)
+    data = dict(res.data)
+    data["examples"] = [e for e in data.get("examples") or [] if isinstance(e, dict) and e.get("zh")][:2]
+    return data, stats

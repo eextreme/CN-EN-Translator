@@ -31,6 +31,8 @@ class Settings:
     tts_voice_zh: str = ""  # empty = first Chinese voice
     tts_voice_en: str = ""  # empty = first English voice
     tts_rate: int = 0  # -10 (slow) .. 10 (fast)
+    dict_hover: bool = True  # pop-up dictionary when hovering Chinese text
+    explain_effort: str = "low"  # effort for "Explain word"
 
     @classmethod
     def load(cls) -> "Settings":

@@ -41,13 +41,15 @@ from PySide6.QtWidgets import (
 
 from .. import __version__
 from ..claude_bridge import ClaudeBridge
+from ..dictionary import CEDICT_FILENAME, Dictionary, LookupResult, WordList, download_cedict, sentence_at
 from ..glossary import Glossary, apply_changes, check_consistency, diff_proposals
 from ..models import CATEGORIES, DEFAULT_NAMING, NAMING_MODES, GlossaryEntry, Warning
 from ..project import Chapter, Project
-from ..services import UNTRANSLATED_MARK, TotalStats, TranslateOutcome, Translator
-from ..settings import Settings
+from ..services import UNTRANSLATED_MARK, TotalStats, TranslateOutcome, Translator, explain_word
+from ..settings import Settings, config_dir
 from ..text_utils import clean_raw, join_paragraphs, replace_paragraphs, split_paragraphs, to_simplified
 from . import workers
+from .dictionary_panel import DictionaryPanel, panel_html, tooltip_html
 from .dialogs import HistoryDialog, SettingsDialog, SyncReviewDialog, TermDialog
 from .editors import TextFrame
 from .speech import Speaker
@@ -73,6 +75,9 @@ from the translation. Hover a term for its glossary entry. Clicking a paragraph 
 frame when both have the same number of paragraphs.</p>
 <p><b>Read aloud (Ctrl+R):</b> right-click selected text or a paragraph and choose <b>Read aloud</b>. Chinese and English
 use matching voices (set them in Settings). Press Ctrl+R again to stop.</p>
+<p><b>Pop-up dictionary:</b> hover a Chinese word in Frame A for its pinyin and meaning (CC-CEDICT). The Dictionary
+panel on the right shows the full entry. <b>Ctrl+E</b> asks Claude to explain the word (or your selection) in its sentence;
+answers are saved. <b>Ctrl+D</b> stars a word for your word list, and words you look up more than once appear there too.</p>
 <p>Earlier versions of translations and the glossary are kept automatically (Chapter → History, Glossary → History).</p>"""
 
 
@@ -88,6 +93,14 @@ class MainWindow(QMainWindow):
         self.speaker = Speaker(self)
         self._speech_frame: TextFrame | None = None
         self._speech_offset = 0
+        # pop-up dictionary
+        self.dictionary: Dictionary | None = None
+        self.wordlist = WordList(config_dir() / "wordlist.json")
+        self._dict_worker: workers.Worker | None = None
+        self._explain_worker: workers.Worker | None = None
+        self._explaining: str = ""
+        self._hover_seen: set[str] = set()
+        self._dict_current: dict | None = None  # word, result, glossary, sentence of the word shown in the panel
 
         self.setWindowTitle(f"LN Translator {__version__}")
         self.resize(1500, 950)
@@ -100,6 +113,8 @@ class MainWindow(QMainWindow):
         self._glossary_timer = self._debounce(self._on_glossary_changed_debounced, 250)
         self._text_timer = self._debounce(self._on_text_changed_debounced, 300)
         self._notes_timer = self._debounce(self._save_notes, 800)
+        self._wordlist_timer = self._debounce(self._save_wordlist, 2000)
+        self._load_dictionary()
 
         if self.settings.recent_projects and Project.is_project(Path(self.settings.recent_projects[0])):
             self.open_project(Path(self.settings.recent_projects[0]))
@@ -149,6 +164,10 @@ class MainWindow(QMainWindow):
         self.speaker.speakingChanged.connect(self._on_speaking_changed)
         self.speaker.wordSpoken.connect(self._on_word_spoken)
         self.speaker.error.connect(lambda msg: QMessageBox.information(self, "Read aloud", msg))
+        self.frame_a.hover_lookup = self._hover_lookup
+        self.frame_a.word_at = self._word_at
+        self.frame_a.explainRequested.connect(lambda: self.explain_word(source="cursor"))
+        self.frame_a.starRequested.connect(lambda: self.star_word(source="cursor"))
         self.frame_a.paragraphActivated.connect(lambda i: self._link(self.frame_b, i))
         self.frame_b.paragraphActivated.connect(lambda i: self._link(self.frame_a, i))
 
@@ -196,6 +215,19 @@ class MainWindow(QMainWindow):
         self.chapter_dock.setFeatures(QDockWidget.DockWidgetMovable | QDockWidget.DockWidgetFloatable)
         self.addDockWidget(Qt.LeftDockWidgetArea, self.chapter_dock)
         self.resizeDocks([self.chapter_dock], [190], Qt.Horizontal)
+
+        # --- Dictionary dock
+        self.dict_panel = DictionaryPanel(self.wordlist)
+        self.dict_panel.speakRequested.connect(self.speak_current_word)
+        self.dict_panel.explainRequested.connect(lambda: self.explain_word(source="panel"))
+        self.dict_panel.starRequested.connect(lambda: self.star_word(source="panel"))
+        self.dict_panel.downloadRequested.connect(self.download_dictionary)
+        self.dict_panel.wordActivated.connect(self._show_list_word)
+        self.dict_dock = QDockWidget("Dictionary", self)
+        self.dict_dock.setObjectName("dictionary")
+        self.dict_dock.setWidget(self.dict_panel)
+        self.addDockWidget(Qt.RightDockWidgetArea, self.dict_dock)
+        self.resizeDocks([self.dict_dock], [340], Qt.Horizontal)
 
         # --- Status bar
         self.busy = QProgressBar()
@@ -424,6 +456,19 @@ class MainWindow(QMainWindow):
         m_g.addSeparator()
         act("Glossary history…", self.glossary_history, menu=m_g)
 
+        m_d = mb.addMenu("&Dictionary")
+        self.a_hover = act("Look up words on hover", self._toggle_hover, menu=m_d)
+        self.a_hover.setCheckable(True)
+        self.a_hover.setChecked(self.settings.dict_hover)
+        act("Explain word", lambda: self.explain_word(source="auto"), "Ctrl+E",
+            "Ask Claude what the hovered word (or the selection) means in its sentence", menu=m_d)
+        act("Star word", lambda: self.star_word(source="auto"), "Ctrl+D",
+            "Add the hovered word (or the selection) to your word list", menu=m_d)
+        act("Speak word", self.speak_current_word, "Ctrl+Shift+R", menu=m_d)
+        m_d.addSeparator()
+        m_d.addAction(self.dict_dock.toggleViewAction())
+        act("Download / update CC-CEDICT…", self.download_dictionary, menu=m_d)
+
         m_ai = mb.addMenu("&AI")
         tb.addSeparator()
         act("Sync", self.sync, "F5", "Learn terminology from the translation in Frame B", ai=True, toolbar=True, menu=m_ai)
@@ -589,6 +634,7 @@ class MainWindow(QMainWindow):
         self.save_chapter(quiet=True)
         self.chapter = self.project.load_chapter(cid)
         self.stop_reading()
+        self._hover_seen.clear()
         self.frame_a.load_text(self.chapter.raw)
         self.frame_b.load_text(self.chapter.translation)
         self.title_edit.setText(self.chapter.title)
@@ -1353,12 +1399,250 @@ class MainWindow(QMainWindow):
         self._run_ai("Connection test", work, done)
 
     # ================================================================== window
+    # ================================================================== Pop-up dictionary
+    def _dict_path(self) -> Path:
+        return config_dir() / CEDICT_FILENAME
+
+    def _load_dictionary(self) -> None:
+        path = self._dict_path()
+        if not path.exists():
+            self.dict_panel.set_missing(True)
+            return
+        w = workers.Worker(lambda progress, cancel, partial: Dictionary.load(path))
+        self._dict_worker = w
+
+        def loaded(d: Dictionary) -> None:
+            self._dict_worker = None
+            self.dictionary = d
+            self.dict_panel.set_missing(False)
+            self.log_line(f"Dictionary: loaded {len(d):,} CC-CEDICT words.")
+
+        def failed(msg: str) -> None:
+            self._dict_worker = None
+            self.log_line(f"Dictionary: could not load {path}: {msg}")
+            self.dict_panel.set_missing(True)
+
+        w.signals.finished.connect(loaded)
+        w.signals.failed.connect(failed)
+        workers.start(w)
+
+    def download_dictionary(self) -> None:
+        if self._dict_worker:
+            return
+        path = self._dict_path()
+        w = workers.Worker(lambda progress, cancel, partial: download_cedict(path, progress))
+        self._dict_worker = w
+        self.dict_panel.b_download.setEnabled(False)
+        w.signals.progress.connect(lambda m: self.statusBar().showMessage(m))
+
+        def done(n: int) -> None:
+            self._dict_worker = None
+            self.dict_panel.b_download.setEnabled(True)
+            self.statusBar().showMessage(f"Dictionary: downloaded {n:,} entries.", 5000)
+            self._load_dictionary()
+
+        def failed(msg: str) -> None:
+            self._dict_worker = None
+            self.dict_panel.b_download.setEnabled(True)
+            self.statusBar().showMessage("Dictionary download failed.", 8000)
+            QMessageBox.warning(self, "Dictionary download failed",
+                                f"{msg}\n\nYou can also download cedict_1_0_ts_utf-8_mdbg.txt.gz from mdbg.net yourself, "
+                                f"unzip it and save it as:\n{path}")
+
+        w.signals.finished.connect(done)
+        w.signals.failed.connect(failed)
+        workers.start(w)
+
+    def _toggle_hover(self) -> None:
+        self.settings.dict_hover = self.a_hover.isChecked()
+        self.settings.save()
+
+    def _save_wordlist(self) -> None:
+        try:
+            self.wordlist.save()
+        except OSError as e:
+            self.log_line(f"Word list: could not save: {e}")
+
+    def _source_label(self) -> str:
+        if not self.project:
+            return ""
+        return self.project.name + (f" · {self.chapter.label}" if self.chapter else "")
+
+    def _glossary_at(self, text: str, pos: int):
+        """(start, end, entry) of the glossary term covering text[pos], or None."""
+        if self.project:
+            for s, e, entry in self.project.glossary.matches(text):
+                if s <= pos < e:
+                    return s, e, entry
+        return None
+
+    def _word_at(self, text: str, pos: int) -> str | None:
+        """The word a lookup at text[pos] is about: a glossary term covering pos wins, else the longest dictionary word."""
+        g = self._glossary_at(text, pos)
+        if g:
+            return text[g[0]:g[1]]
+        if self.dictionary:
+            res = self.dictionary.look_up_at(text, pos)
+            if res:
+                return res.word
+        return None
+
+    def _hover_lookup(self, _block, text: str, pos: int, gmatch):
+        if not self.settings.dict_hover or self.dictionary is None:
+            return None
+        res = self.dictionary.look_up_at(text, pos)
+        if res is None and gmatch is None:
+            return None
+        gentry = gmatch[2] if gmatch else None
+        if gmatch:
+            word, start, end = text[gmatch[0]:gmatch[1]], gmatch[0], gmatch[1]
+        else:
+            word, start, end = res.word, res.primary.start, res.primary.end
+        sentence = res.sentence if res else sentence_at(text, pos)
+        entries = self.dictionary.lookup(word)
+        saved = self.wordlist.get(word)
+        pinyin = entries[0].pinyin if entries else self.dictionary.guess_pinyin(word)
+        if (entries or gentry) and word not in self._hover_seen:  # count once per chapter visit
+            self._hover_seen.add(word)
+            gloss = entries[0].short_gloss(60) if entries else (gentry.en if gentry else "")
+            saved = self.wordlist.record_lookup(word, pinyin, gloss, sentence, self._source_label())
+            self._wordlist_timer.start()
+            self.dict_panel.refresh_list()
+        self._show_in_panel(word, res, gentry, sentence)
+        return tooltip_html(word, res, gentry, saved, entries, pinyin), start, end
+
+    def _show_in_panel(self, word: str, result: LookupResult | None, gentry, sentence: str, status: str = "") -> None:
+        self._dict_current = {"word": word, "result": result, "glossary": gentry, "sentence": sentence}
+        saved = self.wordlist.get(word)
+        if not status and self._explaining == word:
+            status = "Asking Claude…"
+        self.dict_panel.show_html(panel_html(word, self.dictionary, result, gentry, saved, sentence, status),
+                                  bool(saved and saved.saved))
+        self.dict_panel.b_explain.setText("💡 Explain again" if saved and saved.explanation else "💡 Explain")
+
+    def _show_list_word(self, word: str) -> None:
+        saved = self.wordlist.get(word)
+        gentry = None
+        if self.project:
+            gentry = next((e for e in self.project.glossary.entries if e.zh == word), None)
+        self._show_in_panel(word, None, gentry, saved.sentence if saved else "")
+
+    def _target(self, source: str) -> dict | None:
+        """The word to explain or star.
+
+        source="auto" (shortcut): the selection in Frame A, else the word last shown in the panel (usually the hovered one),
+        else the word at the text cursor. "cursor" (context menu): the selection, else the word at the cursor.
+        "panel" (panel buttons): the word shown in the panel.
+        """
+        if source == "panel":
+            return self._dict_current
+        sel, block, pos = self.frame_a.selected_or_cursor()
+        text = block.text()
+        if sel:
+            if len(sel) > 20 or "\n" in sel:
+                return None
+            g = self._glossary_at(text, pos)
+            res = self.dictionary.look_up_at(text, pos) if self.dictionary else None
+            return {"word": sel, "result": res if res and res.word == sel else None,
+                    "glossary": g[2] if g and text[g[0]:g[1]] == sel else None, "sentence": sentence_at(text, pos)}
+        if source == "auto" and self._dict_current:
+            return self._dict_current
+        word = self._word_at(text, pos)
+        if not word:
+            return None
+        g = self._glossary_at(text, pos)
+        res = self.dictionary.look_up_at(text, pos) if self.dictionary else None
+        return {"word": word, "result": res, "glossary": g[2] if g else None, "sentence": sentence_at(text, pos)}
+
+    def star_word(self, source: str = "auto") -> None:
+        t = self._target(source)
+        if not t:
+            self.statusBar().showMessage("Star: hover a word or select one (up to 20 characters) in Frame A first.", 4000)
+            return
+        word = t["word"]
+        entries = self.dictionary.lookup(word) if self.dictionary else []
+        saved = self.wordlist.get(word)
+        now = not (saved and saved.saved)
+        gloss = entries[0].short_gloss(60) if entries else (t["glossary"].en if t["glossary"] else "")
+        pinyin = entries[0].pinyin if entries else (self.dictionary.guess_pinyin(word) if self.dictionary else "")
+        self.wordlist.set_saved(word, now, pinyin, gloss, t["sentence"], self._source_label())
+        self._save_wordlist()
+        self.dict_panel.refresh_list()
+        self._show_in_panel(word, t["result"], t["glossary"], t["sentence"])
+        self.statusBar().showMessage(f"{'Starred' if now else 'Unstarred'} {word}.", 3000)
+
+    def speak_current_word(self) -> None:
+        t = self._dict_current
+        if not t:
+            return
+        self.stop_reading()
+        self._speech_frame = None
+        self.speaker.speak(t["word"])
+
+    def explain_word(self, source: str = "auto") -> None:
+        t = self._target(source)
+        if not t:
+            self.statusBar().showMessage("Explain: hover a word or select one (up to 20 characters) in Frame A first.", 4000)
+            return
+        word, sentence, gentry, result = t["word"], t["sentence"], t["glossary"], t["result"]
+        saved = self.wordlist.get(word)
+        force = source == "panel"  # the panel button reads "Explain again" once an answer is cached
+        if saved and saved.explanation and not force:
+            self.dict_dock.show()
+            self._show_in_panel(word, result, gentry, sentence)
+            return
+        if self._explain_worker:
+            self.statusBar().showMessage(f"Still explaining {self._explaining}…", 4000)
+            return
+        entries = self.dictionary.lookup(word) if self.dictionary else []
+        dict_hint = "\n".join(f"{e.pinyin}: {'; '.join(e.definitions)}" for e in entries[:4])
+        gloss_hint = ""
+        if gentry:
+            gloss_hint = f"{gentry.zh} → {gentry.en} ({gentry.category})" + (f"; {gentry.notes}" if gentry.notes else "")
+        s = self.settings
+        bridge = ClaudeBridge(s.claude_path, s.model, s.effort, s.timeout_seconds)
+        novel = self.project.name if self.project else ""
+        effort = s.explain_effort
+        source_label = self._source_label()
+        w = workers.Worker(lambda progress, cancel, partial: explain_word(
+            bridge, word, sentence, progress, cancel, novel, dict_hint, gloss_hint, effort))
+        self._explain_worker, self._explaining = w, word
+        w.signals.progress.connect(lambda m: self.statusBar().showMessage(m))
+
+        def finish() -> None:
+            self._explain_worker, self._explaining = None, ""
+
+        def done(res) -> None:
+            finish()
+            data, stats = res
+            self.wordlist.set_explanation(word, data, sentence, source_label)
+            self._save_wordlist()
+            self.dict_panel.refresh_list()
+            self._log_stats(f"Explain {word}", stats)
+            self.statusBar().showMessage(f"Explained {word}.", 4000)
+            self._show_in_panel(word, result, gentry, sentence)
+
+        def failed(msg: str) -> None:
+            finish()
+            self.log_line(f"Explain {word} failed: {msg}")
+            self._show_in_panel(word, result, gentry, sentence, status=f"Explain failed: {msg[:300]}")
+
+        w.signals.finished.connect(done)
+        w.signals.failed.connect(failed)
+        w.signals.cancelled.connect(finish)
+        self.dict_dock.show()
+        self._show_in_panel(word, result, gentry, sentence, status="Asking Claude…")
+        workers.start(w)
+
     def closeEvent(self, e):  # noqa: N802
         if self.worker:
             if QMessageBox.question(self, "Quit", "An AI operation is running. Cancel it and quit?") != QMessageBox.Yes:
                 e.ignore()
                 return
             self.worker.cancel()
+        if self._explain_worker:
+            self._explain_worker.cancel()
         self.save_all(quiet=True)
+        self._save_wordlist()
         self.settings.save()
         super().closeEvent(e)

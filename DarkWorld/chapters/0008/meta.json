@@ -1,0 +1,67 @@
+{
+  "title": "",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "金环",
+      "suggested_en": "Golden Ring",
+      "category": "title",
+      "reason": "Glossary term not found in paragraph 15",
+      "paragraph": 14,
+      "entry_id": "09c3a100b830",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "财阀",
+      "suggested_en": "plutocrats / plutocrat families",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 19",
+      "paragraph": 18,
+      "entry_id": "91884db244df",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "财阀",
+      "suggested_en": "plutocrats / plutocrat families",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 21",
+      "paragraph": 20,
+      "entry_id": "91884db244df",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "金环",
+      "suggested_en": "Golden Ring",
+      "category": "title",
+      "reason": "Glossary term not found in paragraph 33",
+      "paragraph": 32,
+      "entry_id": "09c3a100b830",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 45",
+      "paragraph": 44,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 89",
+      "paragraph": 88,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-165902-659"
+}

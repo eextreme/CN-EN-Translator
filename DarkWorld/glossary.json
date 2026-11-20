@@ -980,5 +980,115 @@
     "confirmed": true,
     "first_seen": "0006",
     "id": "ca16e14d8e2f"
+  },
+  {
+    "zh": "叛徒预备役",
+    "en": "traitor-in-waiting",
+    "category": "concept",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0008",
+    "id": "1e206d720fbb"
+  },
+  {
+    "zh": "镇定器",
+    "en": "tranquilizer",
+    "category": "item",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0008",
+    "id": "e50297b772e3"
+  },
+  {
+    "zh": "剥夺者",
+    "en": "Depriver",
+    "category": "title",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0008",
+    "id": "14a29273ede8"
+  },
+  {
+    "zh": "5116号",
+    "en": "No. 5116",
+    "category": "title",
+    "aliases": [],
+    "gender": "male",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0008",
+    "id": "3cf3e991cb9c"
+  },
+  {
+    "zh": "探查之眼",
+    "en": "Probing Eye",
+    "category": "technique",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0008",
+    "id": "54d99899dd22"
+  },
+  {
+    "zh": "血肉再生",
+    "en": "Flesh Regeneration",
+    "category": "technique",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0008",
+    "id": "6cb4acde3aab"
+  },
+  {
+    "zh": "超速愈合",
+    "en": "Hyper-Speed Healing",
+    "category": "technique",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0008",
+    "id": "142ad45af1a6"
+  },
+  {
+    "zh": "快速治愈",
+    "en": "Rapid Healing",
+    "category": "technique",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0008",
+    "id": "697d8bf6bc61"
+  },
+  {
+    "zh": "变脸能力",
+    "en": "Face-Changing ability",
+    "category": "technique",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0008",
+    "id": "f2e2b46bda94"
+  },
+  {
+    "zh": "皮肤硬化",
+    "en": "Skin Hardening",
+    "category": "technique",
+    "aliases": [],
+    "gender": "",
+    "notes": "",
+    "confirmed": true,
+    "first_seen": "0008",
+    "id": "91033bb70291"
   }
 ]
