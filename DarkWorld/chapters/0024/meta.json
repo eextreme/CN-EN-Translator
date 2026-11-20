@@ -1,0 +1,97 @@
+{
+  "title": "0025",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 5",
+      "paragraph": 4,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "琥珀",
+      "suggested_en": "Amber",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 5",
+      "paragraph": 4,
+      "entry_id": "4c8b128a9667",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 6",
+      "paragraph": 5,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 12",
+      "paragraph": 11,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 17",
+      "paragraph": 16,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 24",
+      "paragraph": 23,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 40",
+      "paragraph": 39,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 49",
+      "paragraph": 48,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 55",
+      "paragraph": 54,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-230232-172"
+}

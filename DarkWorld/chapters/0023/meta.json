@@ -1,0 +1,87 @@
+{
+  "title": "0024",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 24",
+      "paragraph": 23,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 28",
+      "paragraph": 27,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 31",
+      "paragraph": 30,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 32",
+      "paragraph": 31,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 35",
+      "paragraph": 34,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 42",
+      "paragraph": 41,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "安保员",
+      "suggested_en": "security officers",
+      "category": "title",
+      "reason": "Glossary term not found in paragraph 42",
+      "paragraph": 41,
+      "entry_id": "7b83f960ff3c",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 45",
+      "paragraph": 44,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-225217-411"
+}

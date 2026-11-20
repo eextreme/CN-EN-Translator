@@ -1,0 +1,97 @@
+{
+  "title": "0021",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "空间漩涡",
+      "suggested_en": "spatial vortex",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 38",
+      "paragraph": 37,
+      "entry_id": "fca2ae7ae99f",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "爆裂弹",
+      "suggested_en": "explosive rounds",
+      "category": "item",
+      "reason": "Glossary term not found in paragraph 63",
+      "paragraph": 62,
+      "entry_id": "3cf0fde6e3c3",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "空间漩涡",
+      "suggested_en": "spatial vortex",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 65",
+      "paragraph": 64,
+      "entry_id": "fca2ae7ae99f",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "湮灭",
+      "suggested_en": "Annihilation",
+      "category": "title",
+      "reason": "Glossary term not found in paragraph 79",
+      "paragraph": 78,
+      "entry_id": "0924dfb059d9",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 84",
+      "paragraph": 83,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "奥格斯",
+      "suggested_en": "Augus",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 88",
+      "paragraph": 87,
+      "entry_id": "ad4cfbd01b65",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 110",
+      "paragraph": 109,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 113",
+      "paragraph": 112,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 123",
+      "paragraph": 122,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-220841-291"
+}

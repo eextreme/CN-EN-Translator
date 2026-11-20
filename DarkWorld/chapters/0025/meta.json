@@ -1,0 +1,137 @@
+{
+  "title": "",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "uncertain",
+      "zh": "鸣山市",
+      "suggested_en": "Mingshan City",
+      "category": "place",
+      "reason": "New place: a small city on the outskirts of Floating Port City.",
+      "paragraph": 3,
+      "entry_id": "",
+      "alternative_en": "Singing Mountain City"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "超速恢复药剂",
+      "suggested_en": "rapid recovery serum",
+      "category": "item",
+      "reason": "New item. Also appears as 恢复药剂 (recovery serum) and 自愈药剂 (self-healing serum), and I treated these as the same drug.",
+      "paragraph": 12,
+      "entry_id": "",
+      "alternative_en": "hyper-recovery serum"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "冥土",
+      "suggested_en": "the Netherworld",
+      "category": "concept",
+      "reason": "A religious term in the cult's oath. It may come up again.",
+      "paragraph": 60,
+      "entry_id": "",
+      "alternative_en": "Mingtu"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "我主 / 主",
+      "suggested_en": "my Lord / the Lord",
+      "category": "title",
+      "reason": "The deity the black-robed cult worships. The cult (教团) appears in the next paragraph.",
+      "paragraph": 58,
+      "entry_id": "",
+      "alternative_en": "my Master"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "老板",
+      "suggested_en": "Boss",
+      "category": "title",
+      "reason": "What Augus calls his mysterious employer, a male cult member. I put it in quotes in the narration.",
+      "paragraph": 70,
+      "entry_id": "",
+      "alternative_en": "Laoban"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "契约凭证之物",
+      "suggested_en": "token of the covenant",
+      "category": "concept",
+      "reason": "A ritual term: the half-heart offered as a pledge of loyalty.",
+      "paragraph": 60,
+      "entry_id": "",
+      "alternative_en": "proof of the contract"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "政务部",
+      "suggested_en": "Department of Government Affairs",
+      "category": "organization",
+      "reason": "New Federation government department; its Director (male) is Augus's 'Boss' and a Secret Cult member",
+      "paragraph": 92,
+      "entry_id": "",
+      "alternative_en": "Zhengwu Department"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "政务部部长",
+      "suggested_en": "Director of Government Affairs",
+      "category": "title",
+      "reason": "New title. I used the glossary's 部长 = Director, but 'Minister' might fit a cabinet-level post better. Note that 'Director' is also used for SID Director Zhong Xinou",
+      "paragraph": 92,
+      "entry_id": "",
+      "alternative_en": "Minister of Government Affairs"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "教团",
+      "suggested_en": "cult",
+      "category": "organization",
+      "reason": "Short form of 秘密教团 (Secret Cult); written lowercase as 'cult' when it stands alone",
+      "paragraph": 74,
+      "entry_id": "",
+      "alternative_en": "order"
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 42",
+      "paragraph": 41,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "通讯器",
+      "suggested_en": "communicator",
+      "category": "item",
+      "reason": "Glossary term not found in paragraph 66",
+      "paragraph": 65,
+      "entry_id": "a3ca5607bed4",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "通讯器",
+      "suggested_en": "communicator",
+      "category": "item",
+      "reason": "Glossary term not found in paragraph 69",
+      "paragraph": 68,
+      "entry_id": "a3ca5607bed4",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "财阀",
+      "suggested_en": "plutocrats / plutocrat families",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 100",
+      "paragraph": 99,
+      "entry_id": "91884db244df",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-230512-935"
+}

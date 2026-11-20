@@ -1,0 +1,37 @@
+{
+  "title": "0016",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 8",
+      "paragraph": 7,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 16",
+      "paragraph": 15,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "第一世界",
+      "suggested_en": "First World",
+      "category": "place",
+      "reason": "Glossary term not found in paragraph 33",
+      "paragraph": 32,
+      "entry_id": "50f8e5cbb4c7",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-210710-861"
+}

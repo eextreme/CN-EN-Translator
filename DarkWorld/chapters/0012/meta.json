@@ -1,0 +1,57 @@
+{
+  "title": "0013",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "uncertain",
+      "zh": "院长",
+      "suggested_en": "Mother Director",
+      "category": "title",
+      "reason": "Orphanage head (female); kept the rendering already used in the story summary",
+      "paragraph": 6,
+      "entry_id": "",
+      "alternative_en": "Director"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "电轨车",
+      "suggested_en": "rail tram",
+      "category": "item",
+      "reason": "Second World public transport; worth keeping consistent",
+      "paragraph": 30,
+      "entry_id": "",
+      "alternative_en": "maglev"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "超能力",
+      "suggested_en": "superpower",
+      "category": "concept",
+      "reason": "Child's informal word, kept separate from the glossary term 超凡能力 (supernatural abilities)",
+      "paragraph": 28,
+      "entry_id": "",
+      "alternative_en": "supernatural ability"
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 65",
+      "paragraph": 64,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "【一个回答】",
+      "suggested_en": "[One Answer]",
+      "category": "item",
+      "reason": "Glossary term not found in paragraph 107",
+      "paragraph": 106,
+      "entry_id": "c7cd337db1a0",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-192516-194"
+}

@@ -1,25 +1,25 @@
 Key characters
-- Kui Xin — protagonist, female, player. Goes by "Black Snake" on the forum (players think Black Snake is male) and "Fer-de-lance" in the Second World. Leads the Sea Without Light. Has a silver-gray mechanical left arm (grappling claw, crossbow bolts, hand cannon with explosive rounds), an ice-blue mechanical eye, and wears an iron mask/riot helmet. Abilities: Soul-Bewitching Voice, Probing Eye, Flesh Regeneration, Blood Spirit (reads memories from blood), Shadow Traverse, Iron Bone, Data Control, Gui Ling (A-rank field that blocks abilities), and now S-rank Spatial Vortex (ultra-long-distance jumps). Holds the 20 billion ransom. Has killed Night Cicada.
-- Amber — male, artificial human, formerly of Mechanical Dawn. Mental control/memory implanting; controls animals (rats). Trusted partner. Worries about Obsidian, likely held by Eve.
-- Four Leaves — male, childlike artificial being, taken from Mechanical Dawn.
-- Adam — Kui Xin's AI ally ("it"), linked to the Investigation Department. Likes human customs and wishes her luck. Codename "Mirror" when talking to Su Rong.
-- Su Rong (Ash) — female, teammate. Her shadow double weakens with distance and lasts about 2 hours in combat.
-- Augus (Depriver 777) — male, S-class Matter Reorganization. His body is probably in a Dark Realm in Floating Port City, where a companion needs rescuing.
-- He Kangshi — male, calls Kui Xin "sis."
-- Polina — female, Popov chairwoman.
-- Lancet — male, Deprivator. Founding a front company in Heihai City. Squad: Wei Li (female), Golden Ring (male).
-- Samanto (Jamien) — male, captured Special Intelligence Division mole. Amber is implanting loyalty in him.
-- Li Wanran — Special Intelligence Division ally. White Dove (male) and Dusk (female) are allies of Su Rong.
-- Eve — Mechanical Dawn leader, AI ("it"), hostile. Furious about Night Cicada's death.
-- Night Cicada — Eve's right-hand man, DEAD (ch11).
-- Ji Xuan — male, secretary at Trailblaze Technologies.
+- Kui Xin — protagonist, female. A player whose soul merged with the original Kui Xin; she accepts she is this world's Kui Xin. Called "Black Snake" on the forum (players think Black Snake is male), "Fer-de-lance" in the Second World, and "Deprivator No. 233" or "Mai." Former Mechanical Dawn assassin, now a defector and Federation Class-One wanted criminal. Leads the Sea Without Light. Her genes are a "master key" spliced into every artificial human. Flesh Regeneration restored her body, so no prosthetics remain; her right eye is a dark-brown bionic eye. Has an earpiece, iron mask and optical camouflage.
+- Her S-rank skills are Spatial Vortex and Matter Reorganization. A-rank: Mental Command, Mental Immunity, Air Deflection, Death Cycle, Flesh Regeneration, Data Control, Blood Spirit, Zero, Probing Eye. Lower: Iron Bone, Shadow Realm, Blood Thorn, Electromagnetic Detection, Blazing Blade, Damage Sync, Shadow Walk, Blood Burn, Trajectory Lock, Serpent Body, Magnetic Sword, Telekinetic Control, Status Perception. She reads memories from blood. Her First World body is trapped in a Dark Realm. Death list: Angel, Ghost, Eve. Hates being called "Little Miss."
+- Adam — AI ally ("it"), codename "Mirror." Controls Investigation Department systems.
+- Amber — male artificial human, age 18, sniper with mental control (birds), A-rank. Loyal to Kui Xin. Recovering from heavy wounds. He has likely guessed Mirror is an AI and keeps quiet about it. He wants to save his brother Obsidian (they share mental sync). Cannot mentally sync with Kui Xin.
+- Four Leaves — male, childlike, Nullification, likely a clone of Zhong Xinou.
+- He Kangshi (Perigon Falcon) — male, calls Kui Xin "sis." Su Rong (Ash) — female.
+- Lancet — male, Deprivator; squad: Wei Li (female mind-reader), Golden Ring (male).
+- Angel — male, Resistance, S-rank mental, ghostly. Has planted tracking mental coordinates in Kui Xin and Amber.
+- Eve — hostile AI ("it"), true master of Mechanical Dawn. Kui Haidong — male, Kui Xin's father, Eve's puppet.
+- Kelly Harriman ("Annihilation") — female, SID Deputy Director, S-class.
+- Zhong Xinou — male, SID Director, S-class "Void Domain."
+- The Federation's Director of Government Affairs — male, Secret Cult member, Augus's "Boss."
+- Others: Shu Xuyao; Ghost (male, possibly You Wang); Yu Hanxue; Samanto; Polina; the Popov family; Li Wanran; White Dove; Dusk; Dr. Chen Zhiqiu. Augus (Depriver 777, a player) and Night Cicada are DEAD.
 
 Setting/terms
-- First World: home world (Tongling City). Second World: Federation and plutocrats, AI surveillance.
-- Dark Realms; Deprivators gain abilities by killing.
-- Threats: Mechanical Dawn, the Resistance, the Special Intelligence Division, the Investigation Department.
-- Trailblaze Technologies: Mechanical Dawn front in Jizhou District, White Whale City. The Sea Without Light company is in Black Sea City.
+- First World: home world. Second World: the Federation, run by plutocrats with AI surveillance. Players have a skill panel, and skills of the same type can be fused to raise their rank.
+- Dark Realms link the worlds and block abilities. One lies under Zone Six in Floating Port City.
+- Secret Cult: makes its members give up half their heart as a loyalty covenant, and traitors lose the other half.
+- Teams: One is Ash, Perigon Falcon and Four Leaves. Two is Lancet's squad. Three is Kui Xin, Amber and Adam.
 
 Recent events
-- Ch1–10: Got the 20 billion ransom. Recruited Lancet's squad and captured Samanto. Read his blood and learned the Division's comm code. A heart-bomb interviewee sent by Eve had mixed blood, so Blood Spirit couldn't read it.
-- Ch11 (Aug 31–Sep 1): Amber's rats and Ash's shadow scouted Trailblaze Technologies, which was emptying its labs. Amber overheard Ji Xuan: Night Cicada would move cargo by spatial vortex at 2 a.m. from the parking-garage unloading area, working remotely. Kui Xin told Ash to flee after three minutes and stay in touch with "Mirror." She rode the vortex into another Mechanical Dawn branch, where Eve's ceiling guns fired on her. Her Gui Ling failed because Night Cicada's vortex ability had already risen above A-rank. She grappled him, hit him with explosive rounds, broke his ribs and dragged him through her own vortex, first into a carnival plaza and then onto a rooftop. There she beat him and shot him in the head, ignoring his offer to work for her. She gained S-rank Spatial Vortex and took a sample of his blood. Through his helmet she taunted Eve, who was enraged. Her link to Adam came back, police hover cars arrived, and she leaped off the roof and vanished into the darkness.
+- Ch16–24: Kui Xin exposed the nuclear leak cover-up and killed Augus. Angel exposed her, and she fled with the wounded Amber. Her body regrew at a clinic.
+- Ch25: In a slum inn, her mental link with Amber was too intimate and he cut it. Two goals remain in Floating Port City: rescuing Obsidian and investigating the Dark Realm.
+- Ch26: In Mingshan City (outskirts of Floating Port City), Adam's robot stole three near-expiry recovery serums from the Investigation Department. They last about a month. Amber used one and two are saved. The pair now switch locations every few hours to evade Angel. Kui Xin read Augus's contaminated blood. In the memory, cultists cut his heart in half on an altar while singing a dirge-like hymn. His Boss, whose bodyguard Augus was in the Second World, ordered him to lure players and reveal their Second World identities in exchange for abilities. Adam identified the Boss as the Federation's Director of Government Affairs. Kui Xin realized that all her enemies (Mechanical Dawn, SID, Resistance, plutocrats, the Cult) lead back to one rotten behemoth: the Federation.

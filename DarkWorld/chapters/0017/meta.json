@@ -1,0 +1,57 @@
+{
+  "title": "0018",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "联邦",
+      "suggested_en": "Federation",
+      "category": "organization",
+      "reason": "Glossary term not found in paragraph 17",
+      "paragraph": 16,
+      "entry_id": "e71bc553d563",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "安保员",
+      "suggested_en": "security officers",
+      "category": "title",
+      "reason": "Glossary term not found in paragraph 42",
+      "paragraph": 41,
+      "entry_id": "7b83f960ff3c",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "安保员",
+      "suggested_en": "security officers",
+      "category": "title",
+      "reason": "Glossary term not found in paragraph 44",
+      "paragraph": 43,
+      "entry_id": "7b83f960ff3c",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "安保员",
+      "suggested_en": "security officers",
+      "category": "title",
+      "reason": "Glossary term not found in paragraph 46",
+      "paragraph": 45,
+      "entry_id": "7b83f960ff3c",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "琥珀",
+      "suggested_en": "Amber",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 66",
+      "paragraph": 65,
+      "entry_id": "4c8b128a9667",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-212906-870"
+}

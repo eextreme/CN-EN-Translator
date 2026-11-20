@@ -1,0 +1,17 @@
+{
+  "title": "",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 25",
+      "paragraph": 24,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-210638-439"
+}

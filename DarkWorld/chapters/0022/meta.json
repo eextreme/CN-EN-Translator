@@ -1,0 +1,127 @@
+{
+  "title": "0023",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "uncertain",
+      "zh": "空无之界",
+      "suggested_en": "Void Domain",
+      "category": "technique",
+      "reason": "Zhong Xinou's S-class nullification domain; the story summary calls it 'Void Domain', but it isn't in the glossary",
+      "paragraph": 37,
+      "entry_id": "",
+      "alternative_en": "Kongwu Realm"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "弯钩爪",
+      "suggested_en": "grappling claw",
+      "category": "item",
+      "reason": "Purely mechanical grappling hook in Kui Xin's mechanical arm; recurring gear",
+      "paragraph": 7,
+      "entry_id": "",
+      "alternative_en": "hooked claw"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "光学迷彩",
+      "suggested_en": "optical camouflage",
+      "category": "item",
+      "reason": "Kui Xin's invisibility device; recurring",
+      "paragraph": 7,
+      "entry_id": "",
+      "alternative_en": "optical camo"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "悬浮警车",
+      "suggested_en": "hover police car",
+      "category": "item",
+      "reason": "Recurring vehicle term, matches the summary",
+      "paragraph": 6,
+      "entry_id": "",
+      "alternative_en": "levitating police car"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "悬浮轨道 / 悬浮铁轨",
+      "suggested_en": "levitation rail",
+      "category": "place",
+      "reason": "City's elevated rail network; recurring",
+      "paragraph": 10,
+      "entry_id": "",
+      "alternative_en": "maglev track"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "K80狙击枪",
+      "suggested_en": "K80 sniper rifle",
+      "category": "item",
+      "reason": "new weapon model; Amber's rifle",
+      "paragraph": 84,
+      "entry_id": "",
+      "alternative_en": "K80 sniper gun"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "C区信号塔",
+      "suggested_en": "signal tower in Zone C",
+      "category": "place",
+      "reason": "new location; 区 rendered as 'Zone' to match 'Zone Six'",
+      "paragraph": 99,
+      "entry_id": "",
+      "alternative_en": "Zone C Signal Tower"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "兄弟",
+      "suggested_en": "brother",
+      "category": "character",
+      "reason": "ambiguous: probably means Four Leaves (Amber cares about him); could be plural or a figure of speech",
+      "paragraph": 88,
+      "entry_id": "",
+      "alternative_en": "brothers"
+    },
+    {
+      "kind": "missing",
+      "zh": "安保员",
+      "suggested_en": "security officers",
+      "category": "title",
+      "reason": "Glossary term not found in paragraph 16",
+      "paragraph": 15,
+      "entry_id": "7b83f960ff3c",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 49",
+      "paragraph": 48,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "安保员",
+      "suggested_en": "security officers",
+      "category": "title",
+      "reason": "Glossary term not found in paragraph 62",
+      "paragraph": 61,
+      "entry_id": "7b83f960ff3c",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 93",
+      "paragraph": 92,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-223057-379"
+}

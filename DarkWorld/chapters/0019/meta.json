@@ -1,0 +1,37 @@
+{
+  "title": "0020",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 1",
+      "paragraph": 0,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 47",
+      "paragraph": 46,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "财阀",
+      "suggested_en": "plutocrats / plutocrat families",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 61",
+      "paragraph": 60,
+      "entry_id": "91884db244df",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-215320-447"
+}

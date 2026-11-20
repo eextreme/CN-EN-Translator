@@ -1,0 +1,67 @@
+{
+  "title": "",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "空间漩涡",
+      "suggested_en": "spatial vortex",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 4",
+      "paragraph": 3,
+      "entry_id": "fca2ae7ae99f",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 49",
+      "paragraph": 48,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 50",
+      "paragraph": 49,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 60",
+      "paragraph": 59,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 67",
+      "paragraph": 66,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 89",
+      "paragraph": 88,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-225141-834"
+}

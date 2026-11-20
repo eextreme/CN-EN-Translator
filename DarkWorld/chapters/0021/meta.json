@@ -1,0 +1,77 @@
+{
+  "title": "0022",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "uncertain",
+      "zh": "空无之界",
+      "suggested_en": "Void Domain",
+      "category": "technique",
+      "reason": "New term: the name of Zhong Xinou's S-class nullification domain.",
+      "paragraph": 38,
+      "entry_id": "",
+      "alternative_en": "Kongwu Zhi Jie"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "无效化",
+      "suggested_en": "Nullification",
+      "category": "concept",
+      "reason": "The ability type Zhong Xinou has. I matched it to the summary's 'Nullification' for Four Leaves' ability.",
+      "paragraph": 44,
+      "entry_id": "",
+      "alternative_en": "Wuxiaohua"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "悬浮警车",
+      "suggested_en": "hover police car",
+      "category": "item",
+      "reason": "A recurring futuristic vehicle; should be rendered the same way every time.",
+      "paragraph": 50,
+      "entry_id": "",
+      "alternative_en": "levitating police car"
+    },
+    {
+      "kind": "uncertain",
+      "zh": "悬浮轨道",
+      "suggested_en": "levitation track",
+      "category": "place",
+      "reason": "A recurring city feature; should be rendered the same way every time.",
+      "paragraph": 59,
+      "entry_id": "",
+      "alternative_en": "maglev track"
+    },
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 32",
+      "paragraph": 31,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "弟弟",
+      "suggested_en": "younger brother",
+      "category": "other",
+      "reason": "Glossary term not found in paragraph 37",
+      "paragraph": 36,
+      "entry_id": "04f6d9e91413",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "隗辛",
+      "suggested_en": "Kui Xin",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 67",
+      "paragraph": 66,
+      "entry_id": "0d6b6d8b444e",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-222000-118"
+}

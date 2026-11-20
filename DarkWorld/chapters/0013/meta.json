@@ -1,0 +1,67 @@
+{
+  "title": "014",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "夜蝉",
+      "suggested_en": "Night Cicada",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 3",
+      "paragraph": 2,
+      "entry_id": "14bb24d70cf6",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "夜蝉",
+      "suggested_en": "Night Cicada",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 9",
+      "paragraph": 8,
+      "entry_id": "14bb24d70cf6",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "夜蝉",
+      "suggested_en": "Night Cicada",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 14",
+      "paragraph": 13,
+      "entry_id": "14bb24d70cf6",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "夜蝉",
+      "suggested_en": "Night Cicada",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 50",
+      "paragraph": 49,
+      "entry_id": "14bb24d70cf6",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "夜蝉",
+      "suggested_en": "Night Cicada",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 53",
+      "paragraph": 52,
+      "entry_id": "14bb24d70cf6",
+      "alternative_en": ""
+    },
+    {
+      "kind": "missing",
+      "zh": "夜蝉",
+      "suggested_en": "Night Cicada",
+      "category": "character",
+      "reason": "Glossary term not found in paragraph 70",
+      "paragraph": 69,
+      "entry_id": "14bb24d70cf6",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-194256-856"
+}

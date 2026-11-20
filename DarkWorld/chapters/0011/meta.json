@@ -1,5 +1,5 @@
 {
-  "title": "",
+  "title": "0013",
   "source": "ai",
   "warnings": [
     {
@@ -7,141 +7,11 @@
       "zh": "超凡能力",
       "suggested_en": "supernatural abilities",
       "category": "concept",
-      "reason": "Glossary term not found in paragraph 75",
-      "paragraph": 74,
-      "entry_id": "23ff4d47988d",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "隗辛",
-      "suggested_en": "Kui Xin",
-      "category": "character",
-      "reason": "Glossary term not found in paragraph 86",
-      "paragraph": 85,
-      "entry_id": "0d6b6d8b444e",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "隗辛",
-      "suggested_en": "Kui Xin",
-      "category": "character",
-      "reason": "Glossary term not found in paragraph 91",
-      "paragraph": 90,
-      "entry_id": "0d6b6d8b444e",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "隗辛",
-      "suggested_en": "Kui Xin",
-      "category": "character",
-      "reason": "Glossary term not found in paragraph 109",
-      "paragraph": 108,
-      "entry_id": "0d6b6d8b444e",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "空间漩涡",
-      "suggested_en": "spatial vortex",
-      "category": "concept",
-      "reason": "Glossary term not found in paragraph 120",
-      "paragraph": 119,
-      "entry_id": "fca2ae7ae99f",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "隗辛",
-      "suggested_en": "Kui Xin",
-      "category": "character",
-      "reason": "Glossary term not found in paragraph 122",
-      "paragraph": 121,
-      "entry_id": "0d6b6d8b444e",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "隗辛",
-      "suggested_en": "Kui Xin",
-      "category": "character",
-      "reason": "Glossary term not found in paragraph 130",
-      "paragraph": 129,
-      "entry_id": "0d6b6d8b444e",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "隗辛",
-      "suggested_en": "Kui Xin",
-      "category": "character",
-      "reason": "Glossary term not found in paragraph 131",
-      "paragraph": 130,
-      "entry_id": "0d6b6d8b444e",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "隗辛",
-      "suggested_en": "Kui Xin",
-      "category": "character",
-      "reason": "Glossary term not found in paragraph 134",
-      "paragraph": 133,
-      "entry_id": "0d6b6d8b444e",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "机械黎明",
-      "suggested_en": "Mechanical Dawn",
-      "category": "organization",
-      "reason": "Glossary term not found in paragraph 135",
-      "paragraph": 134,
-      "entry_id": "b292ed6e0b18",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "超凡能力",
-      "suggested_en": "supernatural abilities",
-      "category": "concept",
-      "reason": "Glossary term not found in paragraph 138",
-      "paragraph": 137,
-      "entry_id": "23ff4d47988d",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "隗辛",
-      "suggested_en": "Kui Xin",
-      "category": "character",
-      "reason": "Glossary term not found in paragraph 147",
-      "paragraph": 146,
-      "entry_id": "0d6b6d8b444e",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "夜蝉",
-      "suggested_en": "Night Cicada",
-      "category": "character",
-      "reason": "Glossary term not found in paragraph 150",
-      "paragraph": 149,
-      "entry_id": "14bb24d70cf6",
-      "alternative_en": ""
-    },
-    {
-      "kind": "missing",
-      "zh": "超凡能力",
-      "suggested_en": "supernatural abilities",
-      "category": "concept",
-      "reason": "Glossary term not found in paragraph 192",
-      "paragraph": 191,
+      "reason": "Glossary term not found in paragraph 9",
+      "paragraph": 8,
       "entry_id": "23ff4d47988d",
       "alternative_en": ""
     }
   ],
-  "updated": "20261119-175340-797"
+  "updated": "20261119-191019-734"
 }
