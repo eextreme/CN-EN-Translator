@@ -1,0 +1,17 @@
+{
+  "title": "0011",
+  "source": "ai",
+  "warnings": [
+    {
+      "kind": "missing",
+      "zh": "超凡能力",
+      "suggested_en": "supernatural abilities",
+      "category": "concept",
+      "reason": "Glossary term not found in paragraph 5",
+      "paragraph": 4,
+      "entry_id": "23ff4d47988d",
+      "alternative_en": ""
+    }
+  ],
+  "updated": "20261119-174827-110"
+}
